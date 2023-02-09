@@ -50,6 +50,8 @@ class AuthenticationControllerTest {
     void ShouldRegisterUserWhenInputIsValid() throws Exception {
         // Given
         RegistrationRequest request = RegistrationRequest.builder()
+                .firstName("John")
+                .lastName("Last")
                 .email(EMAIL)
                 .password(PASSWORD)
                 .verifyPassword(PASSWORD)
