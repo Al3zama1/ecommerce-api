@@ -4,10 +4,11 @@ import com.example.ecommerce.api.config.JwtService;
 import com.example.ecommerce.api.config.SecurityConfig;
 import com.example.ecommerce.api.config.UserAuthenticationEntryPoint;
 import com.example.ecommerce.api.config.WebSecurity;
-import com.example.ecommerce.api.dto.product.ProductDto;
+import com.example.ecommerce.api.dto.product.AddProductDto;
 import com.example.ecommerce.api.repository.UserRepository;
 import com.example.ecommerce.api.service.interfaces.IProductService;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -17,12 +18,16 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(ProductController.class)
@@ -43,7 +48,7 @@ class ProductControllerTest {
     @Test
     void ShouldCallServiceLogicAndReturnNewProductLocation() throws Exception {
         // Given
-        ProductDto product = getProduct();
+        AddProductDto product = getProduct();
 
         // When
        MvcResult result = mockMvc.perform(post("/api/v1/products")
@@ -53,14 +58,14 @@ class ProductControllerTest {
                .andExpect(status().isCreated()).andReturn();
 
        // Then
-        then(productService).should().createProduct(any(ProductDto.class));
+        then(productService).should().createProduct(any(AddProductDto.class));
         assertThat(result.getResponse().containsHeader("Location")).isTrue();
     }
 
     @Test
     void ShouldNotCallServiceLogicWhenInvalidInputIsGiven() throws Exception {
         // Given
-        ProductDto product = new ProductDto();
+        AddProductDto product = new AddProductDto();
 
         // When
         mockMvc.perform(post("/api/v1/products")
@@ -76,7 +81,7 @@ class ProductControllerTest {
     @Test
     void ShouldReturn401WhenUserIsUnauthenticated() throws Exception {
         // Given
-        ProductDto product = getProduct();
+        AddProductDto product = getProduct();
 
         // When
         mockMvc.perform(post("/api/v1/products")
@@ -91,7 +96,7 @@ class ProductControllerTest {
     @Test
     void ShouldReturn403WhenUserDoesNotHavePermissionToAddBook() throws Exception{
         // Given
-        ProductDto product = getProduct();
+        AddProductDto product = getProduct();
 
         // When
         mockMvc.perform(post("/api/v1/products")
@@ -104,8 +109,21 @@ class ProductControllerTest {
         then(productService).shouldHaveNoInteractions();
     }
 
-    private ProductDto getProduct() {
-        return ProductDto.builder()
+    @Test
+    void shouldReturnAllProducts() throws Exception {
+        // Given
+        given(productService.getProducts()).willReturn(List.of());
+
+        // When
+        mockMvc.perform(get("/api/v1/products"))
+                .andExpect(jsonPath("$.size()", Matchers.is(0)));
+
+        // Then
+        then(productService).should().getProducts();
+    }
+
+    private AddProductDto getProduct() {
+        return AddProductDto.builder()
                 .name("Iphone 11")
                 .description("This is the  newest iphone")
                 .imageUrl("sfjslfjslfjl")
