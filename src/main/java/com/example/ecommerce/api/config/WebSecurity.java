@@ -28,13 +28,18 @@ public class WebSecurity {
 
     private final AuthenticationProvider authenticationProvider;
     private final JwtAuthFilter jwtAuthFilter;
+    private final UserAuthenticationEntryPoint userAuthenticationEntryPoint;
+
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
+                .exceptionHandling().authenticationEntryPoint(userAuthenticationEntryPoint)
+                .and()
                 .authorizeHttpRequests()
                 .requestMatchers(HttpMethod.POST,"/api/v1/signIn", "/api/v1/signUp").permitAll()
+                .requestMatchers(HttpMethod.POST, "/api/v1/products").hasAnyRole("ADMIN", "MANAGER")
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement()
