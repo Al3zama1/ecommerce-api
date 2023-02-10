@@ -4,8 +4,10 @@ import com.example.ecommerce.api.dto.product.AddProductDto;
 import com.example.ecommerce.api.dto.product.ProductResponseDto;
 import com.example.ecommerce.api.service.interfaces.IProductService;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.PositiveOrZero;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -14,6 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/products")
 @RequiredArgsConstructor
+@Validated
 public class ProductController {
 
     private final IProductService productService;
@@ -27,6 +30,11 @@ public class ProductController {
     @GetMapping
     public List<ProductResponseDto> getProducts() {
         return productService.getProducts();
+    }
+
+    @GetMapping("/{productId}")
+    public ProductResponseDto getProduct(@PositiveOrZero @PathVariable long productId) {
+        return productService.getProduct(productId);
     }
 
 

@@ -5,6 +5,7 @@ import com.example.ecommerce.api.config.SecurityConfig;
 import com.example.ecommerce.api.config.UserAuthenticationEntryPoint;
 import com.example.ecommerce.api.config.WebSecurity;
 import com.example.ecommerce.api.dto.product.AddProductDto;
+import com.example.ecommerce.api.dto.product.ProductResponseDto;
 import com.example.ecommerce.api.repository.UserRepository;
 import com.example.ecommerce.api.service.interfaces.IProductService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -116,10 +117,48 @@ class ProductControllerTest {
 
         // When
         mockMvc.perform(get("/api/v1/products"))
-                .andExpect(jsonPath("$.size()", Matchers.is(0)));
+                .andExpect(jsonPath("$.size()", Matchers.is(0)))
+                .andExpect(status().isOk());
 
         // Then
         then(productService).should().getProducts();
+    }
+
+    @Test
+    void ShouldReturnSingleProduct() throws Exception {
+        // Given
+        ProductResponseDto product = ProductResponseDto.builder()
+                .id(1L)
+                .name("Iphone 13")
+                .description("Product description")
+                .stockQuantity(11)
+                .imageUrl("sdfjslfjsljflsjflskjdf")
+                .price(1100)
+                .build();
+
+        given(productService.getProduct(product.getId())).willReturn(product);
+
+        // When
+        mockMvc.perform(get("/api/v1/products/{productId}", product.getId()))
+                .andExpect(jsonPath("$.id", Matchers.is(1)))
+                .andExpect(jsonPath("$.name", Matchers.is(product.getName())))
+                .andExpect(status().isOk());
+
+        // Then
+        then(productService).should().getProduct(product.getId());
+    }
+
+    @Test
+    void ShouldNotReturnProductIfInvalidProductIdGiven() throws Exception {
+        // Given
+        long productId = -1L;
+
+        // When
+        mockMvc.perform(get("/api/v1/products/{productId}", productId))
+                .andExpect(status().isUnprocessableEntity());
+
+        // Then
+        then(productService).shouldHaveNoInteractions();
     }
 
     private AddProductDto getProduct() {
