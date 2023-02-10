@@ -24,6 +24,20 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @Value("${reflectoring.trace:false}")
     private boolean printStackTrace;
 
+    @ExceptionHandler(InvalidCredentialsException.class)
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    public ResponseEntity<Object> handleInvalidAuthenticationCredentials(InvalidCredentialsException ex,
+                                                                       WebRequest request) {
+        return buildErrorResponse(ex,ex.getMessage(), HttpStatus.UNAUTHORIZED, request);
+    }
+
+    @ExceptionHandler(ConflictException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public ResponseEntity<Object> handleConflictException(ConflictException ex,
+                                                          WebRequest request) {
+        return buildErrorResponse(ex, ex.getMessage(), HttpStatus.CONFLICT, request);
+    }
+
     @Override
     @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
@@ -41,13 +55,15 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(ConstraintViolationException.class)
     @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
-    public ResponseEntity<Object> handleInputConstraintViolation(ConstraintViolationException ex, WebRequest request) {
+    public ResponseEntity<Object> handleInputConstraintViolation(ConstraintViolationException ex,
+                                                                 WebRequest request) {
         return buildErrorResponse(ex, ex.getMessage(), HttpStatus.UNPROCESSABLE_ENTITY, request);
     }
 
     @ExceptionHandler(RuntimeException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public ResponseEntity<Object> handleAllUncaughtExceptions(RuntimeException ex, WebRequest request) {
+    public ResponseEntity<Object> handleAllUncaughtExceptions(RuntimeException ex,
+                                                              WebRequest request) {
         return buildErrorResponse(ex, "Unknown error occurred", HttpStatus.INTERNAL_SERVER_ERROR, request);
     }
 

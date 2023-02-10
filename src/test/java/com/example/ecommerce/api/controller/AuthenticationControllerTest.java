@@ -81,7 +81,7 @@ class AuthenticationControllerTest {
         mockMvc.perform(post("/api/v1/signUp")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(request)))
-                .andExpect(status().isBadRequest());
+                .andExpect(status().isUnprocessableEntity());
 
         // Then
         then(authenticationService).shouldHaveNoInteractions();
@@ -116,7 +116,7 @@ class AuthenticationControllerTest {
         mockMvc.perform(post("/api/v1/signIn")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(request)))
-                .andExpect(status().isBadRequest());
+                .andExpect(status().isUnprocessableEntity());
 
         // Then
         then(authenticationService).shouldHaveNoInteractions();

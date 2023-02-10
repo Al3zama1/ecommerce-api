@@ -6,6 +6,9 @@ import com.example.ecommerce.api.dto.user.AuthenticationResponse;
 import com.example.ecommerce.api.dto.user.RegistrationRequest;
 import com.example.ecommerce.api.entity.User;
 import com.example.ecommerce.api.entity.UserRole;
+import com.example.ecommerce.api.exception.ConflictException;
+import com.example.ecommerce.api.exception.ExceptionMessages;
+import com.example.ecommerce.api.exception.InvalidCredentialsException;
 import com.example.ecommerce.api.repository.UserRepository;
 import com.example.ecommerce.api.service.interfaces.IAuthenticationService;
 import lombok.RequiredArgsConstructor;
@@ -27,12 +30,12 @@ public class AuthenticationService implements IAuthenticationService {
     public void register(RegistrationRequest request) {
         // check if email is unique
         if (userRepository.findByEmail(request.getEmail()).isPresent()) {
-            throw new RuntimeException("User with given email already exists");
+            throw new ConflictException(ExceptionMessages.USER_TAKEN);
         }
 
         // check that both password match
         if (!request.getPassword().equals(request.getVerifyPassword())) {
-            throw new RuntimeException("Passwords must match");
+            throw new InvalidCredentialsException(ExceptionMessages.PASSWORDS_MUST_MATCH);
         }
 
         User user = User.builder()
@@ -50,11 +53,11 @@ public class AuthenticationService implements IAuthenticationService {
         Optional<User> user = userRepository.findByEmail(request.getEmail());
 
         // Check that user with given email exists
-        if (user.isEmpty()) throw new RuntimeException("Invalid credentials");
+        if (user.isEmpty()) throw new InvalidCredentialsException(ExceptionMessages.INVALID_CREDENTIALS);
 
         // Check that existing user and given password match
         if (!passwordEncoder.matches(request.getPassword(), user.get().getPassword())) {
-            throw new RuntimeException("Invalid credentials");
+            throw new InvalidCredentialsException(ExceptionMessages.INVALID_CREDENTIALS);
         }
 
         String jwtToken = jwtService.generateToken(user.get());

@@ -4,6 +4,9 @@ import com.example.ecommerce.api.config.JwtService;
 import com.example.ecommerce.api.dto.user.AuthenticationRequest;
 import com.example.ecommerce.api.dto.user.RegistrationRequest;
 import com.example.ecommerce.api.entity.User;
+import com.example.ecommerce.api.exception.ConflictException;
+import com.example.ecommerce.api.exception.ExceptionMessages;
+import com.example.ecommerce.api.exception.InvalidCredentialsException;
 import com.example.ecommerce.api.repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -64,7 +67,8 @@ class AuthenticationServiceTest {
 
        // When
         assertThatThrownBy(() -> cut.register(request))
-                .isInstanceOf(RuntimeException.class);
+                .isInstanceOf(ConflictException.class)
+                .hasMessage(ExceptionMessages.USER_TAKEN);
 
         // Then
         then(userRepository).should(never()).save(any());
@@ -81,7 +85,8 @@ class AuthenticationServiceTest {
 
         // When
         assertThatThrownBy(() -> cut.register(request))
-                .isInstanceOf(RuntimeException.class);
+                .isInstanceOf(InvalidCredentialsException.class)
+                .hasMessage(ExceptionMessages.PASSWORDS_MUST_MATCH);
 
         // Then
         then(userRepository).should(never()).save(any());
@@ -116,7 +121,8 @@ class AuthenticationServiceTest {
 
         // When
         assertThatThrownBy(() -> cut.authenticate(request))
-                .isInstanceOf(RuntimeException.class);
+                .isInstanceOf(InvalidCredentialsException.class)
+                .hasMessage(ExceptionMessages.INVALID_CREDENTIALS);
 
         // Then
         then(jwtService).shouldHaveNoInteractions();
@@ -135,7 +141,8 @@ class AuthenticationServiceTest {
 
         // When
         assertThatThrownBy(() -> cut.authenticate(request))
-                .isInstanceOf(RuntimeException.class);
+                .isInstanceOf(InvalidCredentialsException.class)
+                .hasMessage(ExceptionMessages.INVALID_CREDENTIALS);
 
         // Then
         then(jwtService).shouldHaveNoInteractions();
