@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class RegistrationRequest {
+public class RegistrationRequestDto {
     @NotBlank
     private String firstName;
     @NotBlank

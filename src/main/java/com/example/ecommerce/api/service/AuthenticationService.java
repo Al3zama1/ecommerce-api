@@ -1,9 +1,9 @@
 package com.example.ecommerce.api.service;
 
 import com.example.ecommerce.api.config.JwtService;
-import com.example.ecommerce.api.dto.user.AuthenticationRequest;
-import com.example.ecommerce.api.dto.user.AuthenticationResponse;
-import com.example.ecommerce.api.dto.user.RegistrationRequest;
+import com.example.ecommerce.api.dto.user.AuthenticationRequestDto;
+import com.example.ecommerce.api.dto.user.AuthenticationResponseDto;
+import com.example.ecommerce.api.dto.user.RegistrationRequestDto;
 import com.example.ecommerce.api.entity.User;
 import com.example.ecommerce.api.entity.UserRole;
 import com.example.ecommerce.api.exception.ConflictException;
@@ -27,7 +27,7 @@ public class AuthenticationService implements IAuthenticationService {
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
 
-    public void register(RegistrationRequest request) {
+    public void register(RegistrationRequestDto request) {
         // check if email is unique
         if (userRepository.findByEmail(request.getEmail()).isPresent()) {
             throw new ConflictException(ExceptionMessages.USER_TAKEN);
@@ -48,7 +48,7 @@ public class AuthenticationService implements IAuthenticationService {
         userRepository.save(user);
     }
 
-    public AuthenticationResponse authenticate(AuthenticationRequest request) {
+    public AuthenticationResponseDto authenticate(AuthenticationRequestDto request) {
 
         Optional<User> user = userRepository.findByEmail(request.getEmail());
 
@@ -62,7 +62,7 @@ public class AuthenticationService implements IAuthenticationService {
 
         String jwtToken = jwtService.generateToken(user.get());
 
-        return AuthenticationResponse.builder()
+        return AuthenticationResponseDto.builder()
                 .token(jwtToken)
                 .build();
     }

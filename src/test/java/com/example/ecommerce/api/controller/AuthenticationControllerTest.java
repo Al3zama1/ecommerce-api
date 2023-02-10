@@ -2,15 +2,15 @@ package com.example.ecommerce.api.controller;
 
 import com.example.ecommerce.api.config.JwtService;
 import com.example.ecommerce.api.config.SecurityConfig;
+import com.example.ecommerce.api.config.UserAuthenticationEntryPoint;
 import com.example.ecommerce.api.config.WebSecurity;
-import com.example.ecommerce.api.dto.user.AuthenticationRequest;
-import com.example.ecommerce.api.dto.user.RegistrationRequest;
+import com.example.ecommerce.api.dto.user.AuthenticationRequestDto;
+import com.example.ecommerce.api.dto.user.RegistrationRequestDto;
 import com.example.ecommerce.api.repository.UserRepository;
 import com.example.ecommerce.api.service.AuthenticationService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -27,7 +27,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(AuthenticationController.class)
-@Import({WebSecurity.class, SecurityConfig.class, JwtService.class})
+@Import({WebSecurity.class, SecurityConfig.class, JwtService.class, UserAuthenticationEntryPoint.class})
 class AuthenticationControllerTest {
 
     @Autowired
@@ -49,7 +49,7 @@ class AuthenticationControllerTest {
     @Test
     void ShouldRegisterUserWhenInputIsValid() throws Exception {
         // Given
-        RegistrationRequest request = RegistrationRequest.builder()
+        RegistrationRequestDto request = RegistrationRequestDto.builder()
                 .firstName("John")
                 .lastName("Last")
                 .email(EMAIL)
@@ -65,7 +65,7 @@ class AuthenticationControllerTest {
 
 
         // Then
-        ArgumentCaptor<RegistrationRequest> captor = ArgumentCaptor.forClass(RegistrationRequest.class);
+        ArgumentCaptor<RegistrationRequestDto> captor = ArgumentCaptor.forClass(RegistrationRequestDto.class);
         then(authenticationService).should(times(1)).register(captor.capture());
         assertThat(captor.getValue()).isEqualTo(request);
     }
@@ -73,7 +73,7 @@ class AuthenticationControllerTest {
     @Test
     void ShouldFailRegistrationWhenInputIsInvalid() throws Exception {
         // Given
-        RegistrationRequest request = RegistrationRequest.builder()
+        RegistrationRequestDto request = RegistrationRequestDto.builder()
                 .email("john@gmail.com")
                 .build();
 
@@ -90,7 +90,7 @@ class AuthenticationControllerTest {
     @Test
     void ShouldReturnUserTokenWhenAuthenticationIsSuccessful() throws Exception {
         // Given
-        AuthenticationRequest request = AuthenticationRequest.builder()
+        AuthenticationRequestDto request = AuthenticationRequestDto.builder()
                 .email(EMAIL)
                 .password(PASSWORD)
                 .build();
@@ -108,7 +108,7 @@ class AuthenticationControllerTest {
     @Test
     void ShouldFailAuthenticationWhenInputIsInvalid() throws Exception {
         // Given
-        AuthenticationRequest request = AuthenticationRequest.builder()
+        AuthenticationRequestDto request = AuthenticationRequestDto.builder()
                 .password("lsjdlfjsdl")
                 .build();
 

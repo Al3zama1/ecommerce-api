@@ -1,12 +1,12 @@
 package com.example.ecommerce.api.service.interfaces;
 
-import com.example.ecommerce.api.dto.user.AuthenticationRequest;
-import com.example.ecommerce.api.dto.user.AuthenticationResponse;
-import com.example.ecommerce.api.dto.user.RegistrationRequest;
+import com.example.ecommerce.api.dto.user.AuthenticationRequestDto;
+import com.example.ecommerce.api.dto.user.AuthenticationResponseDto;
+import com.example.ecommerce.api.dto.user.RegistrationRequestDto;
 
 public interface IAuthenticationService {
 
-    void register(RegistrationRequest request);
+    void register(RegistrationRequestDto request);
 
-    AuthenticationResponse authenticate(AuthenticationRequest request);
+    AuthenticationResponseDto authenticate(AuthenticationRequestDto request);
 }

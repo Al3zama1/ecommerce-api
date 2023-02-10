@@ -1,8 +1,8 @@
 package com.example.ecommerce.api.service;
 
 import com.example.ecommerce.api.config.JwtService;
-import com.example.ecommerce.api.dto.user.AuthenticationRequest;
-import com.example.ecommerce.api.dto.user.RegistrationRequest;
+import com.example.ecommerce.api.dto.user.AuthenticationRequestDto;
+import com.example.ecommerce.api.dto.user.RegistrationRequestDto;
 import com.example.ecommerce.api.entity.User;
 import com.example.ecommerce.api.exception.ConflictException;
 import com.example.ecommerce.api.exception.ExceptionMessages;
@@ -45,7 +45,7 @@ class AuthenticationServiceTest {
     @Test
     void ShouldRegisterUserWhenEmailIsUnique() {
         // Given
-        RegistrationRequest request = getRegistrationRequest();
+        RegistrationRequestDto request = getRegistrationRequest();
 
         given(userRepository.findByEmail(request.getEmail())).willReturn(Optional.empty());
 
@@ -61,7 +61,7 @@ class AuthenticationServiceTest {
     @Test
     void ShouldFailUserRegistrationWhenEmailIsNotUnique() {
        // Given
-       RegistrationRequest request = getRegistrationRequest();
+       RegistrationRequestDto request = getRegistrationRequest();
 
        given(userRepository.findByEmail(request.getEmail())).willReturn(Optional.of(new User()));
 
@@ -77,7 +77,7 @@ class AuthenticationServiceTest {
     @Test
     void ShouldFailUserRegistrationWhenPasswordsDoNotMatch() {
         // Given
-        RegistrationRequest request = getRegistrationRequest();
+        RegistrationRequestDto request = getRegistrationRequest();
         request.setVerifyPassword("23434");
 
         given(userRepository.findByEmail(request.getEmail())).willReturn(Optional.empty());
@@ -95,7 +95,7 @@ class AuthenticationServiceTest {
     @Test
     void ShouldAuthenticateUserWhenCredentialsAreCorrect() {
         // Given
-        AuthenticationRequest request = getAuthenticationRequest();
+        AuthenticationRequestDto request = getAuthenticationRequest();
         User user = User.builder()
                         .id(1L)
                         .password("12345678")
@@ -115,7 +115,7 @@ class AuthenticationServiceTest {
     @Test
     void ShouldFailAuthenticationWhenUserWithEmailDoesNotExist() {
         // Given
-        AuthenticationRequest request = getAuthenticationRequest();
+        AuthenticationRequestDto request = getAuthenticationRequest();
 
         given(userRepository.findByEmail(request.getEmail())).willReturn(Optional.empty());
 
@@ -131,7 +131,7 @@ class AuthenticationServiceTest {
     @Test
     void ShouldFailAuthenticationWhenPasswordIsIncorrect() {
         // Given
-        AuthenticationRequest request = getAuthenticationRequest();
+        AuthenticationRequestDto request = getAuthenticationRequest();
         User user = User.builder()
                         .password("234234")
                         .build();
@@ -149,15 +149,15 @@ class AuthenticationServiceTest {
 
     }
 
-    private AuthenticationRequest getAuthenticationRequest() {
-        return AuthenticationRequest.builder()
+    private AuthenticationRequestDto getAuthenticationRequest() {
+        return AuthenticationRequestDto.builder()
                 .email(EMAIL)
                 .password(PASSWORD)
                 .build();
     }
 
-    private RegistrationRequest getRegistrationRequest() {
-        return RegistrationRequest.builder()
+    private RegistrationRequestDto getRegistrationRequest() {
+        return RegistrationRequestDto.builder()
                 .firstName("John")
                 .lastName("Last")
                 .email(EMAIL)
