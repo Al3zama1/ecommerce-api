@@ -41,6 +41,7 @@ public class WebSecurity {
                 .requestMatchers(HttpMethod.POST,"/api/v1/signIn", "/api/v1/signUp").permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/v1/products/**").permitAll()
                 .requestMatchers(HttpMethod.POST, "/api/v1/products").hasAnyRole("ADMIN", "MANAGER")
+                .requestMatchers(HttpMethod.PUT, "/api/v1/products/**").hasAnyRole("ADMIN", "MANAGER")
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement()

@@ -2,6 +2,7 @@ package com.example.ecommerce.api.controller;
 
 import com.example.ecommerce.api.dto.product.AddProductDto;
 import com.example.ecommerce.api.dto.product.ProductResponseDto;
+import com.example.ecommerce.api.dto.product.UpdateProductDto;
 import com.example.ecommerce.api.service.interfaces.IProductService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.PositiveOrZero;
@@ -35,6 +36,13 @@ public class ProductController {
     @GetMapping("/{productId}")
     public ProductResponseDto getProduct(@PositiveOrZero @PathVariable long productId) {
         return productService.getProduct(productId);
+    }
+
+    @PutMapping("/{productId}")
+    public ResponseEntity<Void> updateProduct(@PositiveOrZero @PathVariable long productId,
+                                              @Valid @RequestBody UpdateProductDto product) {
+        productService.updateProduct(productId, product);
+        return ResponseEntity.noContent().build();
     }
 
 
