@@ -46,8 +46,9 @@ class ProductControllerTest {
 
     private static final String USERNAME = "john@gmail.com";
 
+    // add new product tests
     @Test
-    void ShouldCallServiceLogicAndReturnNewProductLocation() throws Exception {
+    void shouldCallServiceLogicAndReturnNewProductLocation() throws Exception {
         // Given
         AddProductDto product = getProduct();
 
@@ -64,7 +65,7 @@ class ProductControllerTest {
     }
 
     @Test
-    void ShouldNotCallServiceLogicWhenInvalidInputIsGiven() throws Exception {
+    void shouldNotCallServiceLogicWhenInvalidInputIsGiven() throws Exception {
         // Given
         AddProductDto product = new AddProductDto();
 
@@ -80,7 +81,7 @@ class ProductControllerTest {
     }
 
     @Test
-    void ShouldReturn401WhenUserIsUnauthenticated() throws Exception {
+    void shouldReturn401WhenUserIsUnauthenticated() throws Exception {
         // Given
         AddProductDto product = getProduct();
 
@@ -95,7 +96,7 @@ class ProductControllerTest {
     }
 
     @Test
-    void ShouldReturn403WhenUserDoesNotHavePermissionToAddBook() throws Exception{
+    void shouldReturn403WhenUserDoesNotHavePermissionToAddBook() throws Exception{
         // Given
         AddProductDto product = getProduct();
 
@@ -110,6 +111,7 @@ class ProductControllerTest {
         then(productService).shouldHaveNoInteractions();
     }
 
+    // return all products tests
     @Test
     void shouldReturnAllProducts() throws Exception {
         // Given
@@ -124,8 +126,9 @@ class ProductControllerTest {
         then(productService).should().getProducts();
     }
 
+    // return single product tests
     @Test
-    void ShouldReturnSingleProduct() throws Exception {
+    void shouldReturnSingleProduct() throws Exception {
         // Given
         ProductResponseDto product = ProductResponseDto.builder()
                 .id(1L)
@@ -149,7 +152,7 @@ class ProductControllerTest {
     }
 
     @Test
-    void ShouldNotReturnProductIfInvalidProductIdGiven() throws Exception {
+    void shouldNotReturnProductIfInvalidProductIdGiven() throws Exception {
         // Given
         long productId = -1L;
 
@@ -160,6 +163,10 @@ class ProductControllerTest {
         // Then
         then(productService).shouldHaveNoInteractions();
     }
+
+    // update product tests
+    @Test
+
 
     private AddProductDto getProduct() {
         return AddProductDto.builder()

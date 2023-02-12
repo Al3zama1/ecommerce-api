@@ -47,7 +47,7 @@ class AuthenticationControllerTest {
     private static final String PASSWORD = "12345678";
 
     @Test
-    void ShouldRegisterUserWhenInputIsValid() throws Exception {
+    void shouldRegisterUserWhenInputIsValid() throws Exception {
         // Given
         RegistrationRequestDto request = RegistrationRequestDto.builder()
                 .firstName("John")
@@ -71,7 +71,7 @@ class AuthenticationControllerTest {
     }
 
     @Test
-    void ShouldFailRegistrationWhenInputIsInvalid() throws Exception {
+    void shouldFailRegistrationWhenInputIsInvalid() throws Exception {
         // Given
         RegistrationRequestDto request = RegistrationRequestDto.builder()
                 .email("john@gmail.com")
@@ -88,7 +88,7 @@ class AuthenticationControllerTest {
     }
 
     @Test
-    void ShouldReturnUserTokenWhenAuthenticationIsSuccessful() throws Exception {
+    void shouldReturnUserTokenWhenAuthenticationIsSuccessful() throws Exception {
         // Given
         AuthenticationRequestDto request = AuthenticationRequestDto.builder()
                 .email(EMAIL)
@@ -106,7 +106,7 @@ class AuthenticationControllerTest {
     }
 
     @Test
-    void ShouldFailAuthenticationWhenInputIsInvalid() throws Exception {
+    void shouldFailAuthenticationWhenInputIsInvalid() throws Exception {
         // Given
         AuthenticationRequestDto request = AuthenticationRequestDto.builder()
                 .password("lsjdlfjsdl")

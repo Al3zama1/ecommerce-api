@@ -43,7 +43,7 @@ class AuthenticationServiceTest {
     private static final String PASSWORD = "12345678";
 
     @Test
-    void ShouldRegisterUserWhenEmailIsUnique() {
+    void shouldRegisterUserWhenEmailIsUnique() {
         // Given
         RegistrationRequestDto request = getRegistrationRequest();
 
@@ -59,7 +59,7 @@ class AuthenticationServiceTest {
     }
 
     @Test
-    void ShouldFailUserRegistrationWhenEmailIsNotUnique() {
+    void shouldFailUserRegistrationWhenEmailIsNotUnique() {
        // Given
        RegistrationRequestDto request = getRegistrationRequest();
 
@@ -75,7 +75,7 @@ class AuthenticationServiceTest {
     }
 
     @Test
-    void ShouldFailUserRegistrationWhenPasswordsDoNotMatch() {
+    void shouldFailUserRegistrationWhenPasswordsDoNotMatch() {
         // Given
         RegistrationRequestDto request = getRegistrationRequest();
         request.setVerifyPassword("23434");
@@ -93,7 +93,7 @@ class AuthenticationServiceTest {
     }
 
     @Test
-    void ShouldAuthenticateUserWhenCredentialsAreCorrect() {
+    void shouldAuthenticateUserWhenCredentialsAreCorrect() {
         // Given
         AuthenticationRequestDto request = getAuthenticationRequest();
         User user = User.builder()
@@ -113,7 +113,7 @@ class AuthenticationServiceTest {
     }
 
     @Test
-    void ShouldFailAuthenticationWhenUserWithEmailDoesNotExist() {
+    void shouldFailAuthenticationWhenUserWithEmailDoesNotExist() {
         // Given
         AuthenticationRequestDto request = getAuthenticationRequest();
 
@@ -129,7 +129,7 @@ class AuthenticationServiceTest {
     }
 
     @Test
-    void ShouldFailAuthenticationWhenPasswordIsIncorrect() {
+    void shouldFailAuthenticationWhenPasswordIsIncorrect() {
         // Given
         AuthenticationRequestDto request = getAuthenticationRequest();
         User user = User.builder()
