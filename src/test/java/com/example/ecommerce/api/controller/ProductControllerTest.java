@@ -217,6 +217,62 @@ class ProductControllerTest {
         then(productService).shouldHaveNoInteractions();
     }
 
+    // delete product tests
+    @Test
+    void shouldDeleteProductAndReturn204() throws Exception {
+        // Given
+        long productId = 1L;
+
+        // When
+        mockMvc.perform(delete("/api/v1/products/{productId}", productId)
+                .with(user(USERNAME).roles("MANAGER")))
+                .andExpect(status().isNoContent());
+
+        // Then
+        then(productService).should().removeProduct(productId);
+    }
+
+    @Test
+    void shouldFailProductDeletionWhenUserIsUnauthenticatedAnd401() throws Exception {
+        // Given
+        long productId = 1L;
+
+        // When
+        mockMvc.perform(delete("/api/v1/products/{productId}", productId))
+                .andExpect(status().isUnauthorized());
+
+        // Then
+        then(productService).shouldHaveNoInteractions();
+    }
+
+    @Test
+    void shouldFailProductDeletionWhenProductIdIsNotValid() throws Exception {
+        // Given
+        long productId = -1;
+
+        // When
+        mockMvc.perform(delete("/api/v1/products/{productId}", productId)
+                .with(user(USERNAME).roles("ADMIN")))
+                .andExpect(status().isUnprocessableEntity());
+
+        // Then
+        then(productService).shouldHaveNoInteractions();
+    }
+
+    @Test
+    void shouldFailProductDeletionWhenUserDoesNotHavePrivilegeAndReturn403() throws Exception {
+        // Given
+        long productId = 1L;
+
+        // When
+        mockMvc.perform(delete("/api/v1/products/{productId}", productId)
+                .with(user(USERNAME).roles("USER")))
+                .andExpect(status().isForbidden());
+
+        // Then
+        then(productService).shouldHaveNoInteractions();
+    }
+
     private UpdateProductDto getUpdateProductDto() {
         return UpdateProductDto.builder()
                 .name("Iphone 11")

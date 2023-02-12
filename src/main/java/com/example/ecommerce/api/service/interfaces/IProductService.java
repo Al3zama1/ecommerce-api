@@ -15,4 +15,6 @@ public interface IProductService {
     ProductResponseDto getProduct(long productId);
 
     void updateProduct(long productId, UpdateProductDto product);
+
+    void removeProduct(long productId);
 }
