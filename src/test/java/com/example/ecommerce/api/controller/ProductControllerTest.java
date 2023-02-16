@@ -233,7 +233,7 @@ class ProductControllerTest {
     }
 
     @Test
-    void shouldFailProductDeletionWhenUserIsUnauthenticatedAnd401() throws Exception {
+    void shouldFailProductDeletionWhenUserIsUnauthenticatedAndReturn401() throws Exception {
         // Given
         long productId = 1L;
 
