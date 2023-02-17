@@ -18,7 +18,5 @@ public class ProductResponseDto {
     @NotBlank
     private String imageUrl;
     @PositiveOrZero
-    private long stockQuantity;
-    @PositiveOrZero
     private double price;
 }

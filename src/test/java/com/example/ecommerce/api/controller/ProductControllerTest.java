@@ -135,7 +135,6 @@ class ProductControllerTest {
                 .id(1L)
                 .name("Iphone 13")
                 .description("Product description")
-                .stockQuantity(11)
                 .imageUrl("sdfjslfjsljflsjflskjdf")
                 .price(1100)
                 .build();
