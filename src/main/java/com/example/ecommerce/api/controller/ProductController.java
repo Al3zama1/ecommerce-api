@@ -1,12 +1,13 @@
 package com.example.ecommerce.api.controller;
 
-import com.example.ecommerce.api.dto.product.AddProductDto;
-import com.example.ecommerce.api.dto.product.ProductResponseDto;
-import com.example.ecommerce.api.dto.product.UpdateProductDto;
+import com.example.ecommerce.api.mapstruct.dto.product.AddProductDto;
+import com.example.ecommerce.api.mapstruct.dto.product.ProductResponseDto;
+import com.example.ecommerce.api.mapstruct.dto.product.UpdateProductDto;
 import com.example.ecommerce.api.service.interfaces.IProductService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.PositiveOrZero;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -29,26 +30,28 @@ public class ProductController {
     }
 
     @GetMapping
+    @ResponseStatus(HttpStatus.OK)
     public List<ProductResponseDto> getProducts() {
         return productService.getProducts();
     }
 
     @GetMapping("/{productId}")
+    @ResponseStatus(HttpStatus.OK)
     public ProductResponseDto getProduct(@PositiveOrZero @PathVariable long productId) {
         return productService.getProduct(productId);
     }
 
     @PutMapping("/{productId}")
-    public ResponseEntity<Void> updateProduct(@PositiveOrZero @PathVariable long productId,
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void updateProduct(@PositiveOrZero @PathVariable long productId,
                                               @Valid @RequestBody UpdateProductDto product) {
         productService.updateProduct(productId, product);
-        return ResponseEntity.noContent().build();
     }
 
     @DeleteMapping("/{productId}")
-    public ResponseEntity<Void> removeProduct(@PositiveOrZero @PathVariable long productId) {
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void removeProduct(@PositiveOrZero @PathVariable long productId) {
         productService.removeProduct(productId);
-        return ResponseEntity.noContent().build();
     }
 
 

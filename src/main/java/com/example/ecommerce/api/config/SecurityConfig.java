@@ -1,7 +1,14 @@
 package com.example.ecommerce.api.config;
 
+import com.example.ecommerce.api.entity.Cart;
+import com.example.ecommerce.api.entity.Product;
+import com.example.ecommerce.api.entity.User;
+import com.example.ecommerce.api.entity.UserRole;
+import com.example.ecommerce.api.repository.CartRepository;
+import com.example.ecommerce.api.repository.ProductRepository;
 import com.example.ecommerce.api.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -13,11 +20,15 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 @Configuration
 @RequiredArgsConstructor
 public class SecurityConfig {
 
     private final UserRepository userRepository;
+
     @Bean
     public UserDetailsService userDetailsService() {
         return username -> userRepository.findByEmail(username)
@@ -41,4 +52,5 @@ public class SecurityConfig {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
 }

@@ -4,13 +4,14 @@ import com.example.ecommerce.api.config.JwtService;
 import com.example.ecommerce.api.config.SecurityConfig;
 import com.example.ecommerce.api.config.UserAuthenticationEntryPoint;
 import com.example.ecommerce.api.config.WebSecurity;
-import com.example.ecommerce.api.dto.product.AddProductDto;
-import com.example.ecommerce.api.dto.product.ProductResponseDto;
-import com.example.ecommerce.api.dto.product.UpdateProductDto;
+import com.example.ecommerce.api.mapstruct.dto.product.AddProductDto;
+import com.example.ecommerce.api.mapstruct.dto.product.ProductResponseDto;
+import com.example.ecommerce.api.mapstruct.dto.product.UpdateProductDto;
 import com.example.ecommerce.api.repository.UserRepository;
 import com.example.ecommerce.api.service.interfaces.IProductService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.hamcrest.Matchers;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -19,6 +20,8 @@ import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
+import uk.co.jemos.podam.api.PodamFactory;
+import uk.co.jemos.podam.api.PodamFactoryImpl;
 
 import java.util.List;
 
@@ -29,8 +32,7 @@ import static org.mockito.BDDMockito.then;
 import static org.mockito.Mockito.mock;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(ProductController.class)
 @Import({WebSecurity.class, SecurityConfig.class, JwtService.class, UserAuthenticationEntryPoint.class})
@@ -44,25 +46,31 @@ class ProductControllerTest {
     private ObjectMapper objectMapper;
     @MockBean
     private IProductService productService;
+    private static PodamFactory podamFactory;
 
     private static final String USERNAME = "john@gmail.com";
+
+    @BeforeAll
+    static void setUp() {
+        podamFactory = new PodamFactoryImpl();
+    }
 
     // add new product tests
     @Test
     void shouldCallServiceLogicAndReturnNewProductLocation() throws Exception {
         // Given
-        AddProductDto product = getProduct();
+        AddProductDto product = podamFactory.manufacturePojo(AddProductDto.class);
 
         // When
-       MvcResult result = mockMvc.perform(post("/api/v1/products")
+       mockMvc.perform(post("/api/v1/products")
                .contentType(MediaType.APPLICATION_JSON)
                .content(objectMapper.writeValueAsString(product))
                .with(user(USERNAME).roles("ADMIN")))
-               .andExpect(status().isCreated()).andReturn();
+               .andExpect(status().isCreated())
+               .andExpect(header().exists("Location"));
 
        // Then
         then(productService).should().createProduct(any(AddProductDto.class));
-        assertThat(result.getResponse().containsHeader("Location")).isTrue();
     }
 
     @Test
@@ -84,7 +92,7 @@ class ProductControllerTest {
     @Test
     void shouldReturn401WhenUserIsUnauthenticated() throws Exception {
         // Given
-        AddProductDto product = getProduct();
+        AddProductDto product = podamFactory.manufacturePojo(AddProductDto.class);
 
         // When
         mockMvc.perform(post("/api/v1/products")
@@ -99,7 +107,7 @@ class ProductControllerTest {
     @Test
     void shouldReturn403WhenUserDoesNotHavePermissionToAddBook() throws Exception{
         // Given
-        AddProductDto product = getProduct();
+        AddProductDto product = podamFactory.manufacturePojo(AddProductDto.class);
 
         // When
         mockMvc.perform(post("/api/v1/products")
@@ -116,11 +124,12 @@ class ProductControllerTest {
     @Test
     void shouldReturnAllProducts() throws Exception {
         // Given
-        given(productService.getProducts()).willReturn(List.of());
+        ProductResponseDto product = podamFactory.manufacturePojo(ProductResponseDto.class);
+        given(productService.getProducts()).willReturn(List.of(product));
 
         // When
         mockMvc.perform(get("/api/v1/products"))
-                .andExpect(jsonPath("$.size()", Matchers.is(0)))
+                .andExpect(jsonPath("$.size()", Matchers.is(1)))
                 .andExpect(status().isOk());
 
         // Then
@@ -131,19 +140,13 @@ class ProductControllerTest {
     @Test
     void shouldReturnSingleProduct() throws Exception {
         // Given
-        ProductResponseDto product = ProductResponseDto.builder()
-                .id(1L)
-                .name("Iphone 13")
-                .description("Product description")
-                .imageUrl("sdfjslfjsljflsjflskjdf")
-                .price(1100)
-                .build();
+        ProductResponseDto product = podamFactory.manufacturePojo(ProductResponseDto.class);
 
         given(productService.getProduct(product.getId())).willReturn(product);
 
         // When
         mockMvc.perform(get("/api/v1/products/{productId}", product.getId()))
-                .andExpect(jsonPath("$.id", Matchers.is(1)))
+                .andExpect(jsonPath("$.id", Matchers.is(product.getId())))
                 .andExpect(jsonPath("$.name", Matchers.is(product.getName())))
                 .andExpect(status().isOk());
 
@@ -168,7 +171,7 @@ class ProductControllerTest {
     @Test
     void shouldUpdateExistingProductWhenInputIsValid() throws Exception {
         // Given
-        UpdateProductDto product = getUpdateProductDto();
+        UpdateProductDto product = podamFactory.manufacturePojo(UpdateProductDto.class);
 
         // When
         mockMvc.perform(put("/api/v1/products/{productId}", product.getId())
@@ -203,7 +206,7 @@ class ProductControllerTest {
     @Test
     void shouldNotUpdateProductWhenUserDoesNotHavePrivileges() throws Exception {
         // Given
-        UpdateProductDto product = getUpdateProductDto();
+        UpdateProductDto product = podamFactory.manufacturePojo(UpdateProductDto.class);
 
         // When
         mockMvc.perform(put("/api/v1/products/{productId}", product.getId())
@@ -272,24 +275,4 @@ class ProductControllerTest {
         then(productService).shouldHaveNoInteractions();
     }
 
-    private UpdateProductDto getUpdateProductDto() {
-        return UpdateProductDto.builder()
-                .name("Iphone 11")
-                .description("Product description")
-                .imageUrl("image url")
-                .stockQuantity(11)
-                .price(1100)
-                .id(1L)
-                .build();
-    }
-
-    private AddProductDto getProduct() {
-        return AddProductDto.builder()
-                .name("Iphone 11")
-                .description("This is the  newest iphone")
-                .imageUrl("sfjslfjslfjl")
-                .stockQuantity(11)
-                .price(1100)
-                .build();
-    }
 }

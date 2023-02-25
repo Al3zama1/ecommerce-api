@@ -1,0 +1,768 @@
+2023-02-23 10:49:38,152 ERROR [restartedMain] org.springframework.boot.SpringApplication: $msg
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.classic.PatternLayout("null") - Empty or null pattern.
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:347)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:352)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1291)
+	at com.example.ecommerce.api.EcommerceApiApplication.main(EcommerceApiApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.classic.PatternLayout("null") - Empty or null pattern.
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:253)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reinitialize(LogbackLoggingSystem.java:312)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:73)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:188)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
+	... 24 common frames omitted
+2023-02-23 10:50:19,540 ERROR [restartedMain] org.springframework.boot.SpringApplication: $msg
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.classic.PatternLayout("null") - Empty or null pattern.
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:347)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:352)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1291)
+	at com.example.ecommerce.api.EcommerceApiApplication.main(EcommerceApiApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.classic.PatternLayout("null") - Empty or null pattern.
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:253)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reinitialize(LogbackLoggingSystem.java:312)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:73)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:188)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
+	... 24 common frames omitted
+2023-02-23 10:53:54,666 INFO [background-preinit] org.hibernate.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.0.Final
+2023-02-23 10:53:54,683 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting EcommerceApiApplication using Java 17.0.5 with PID 57372 (/Users/al3zama1/Workspace/java/resume-projects/ecommerce-api/target/classes started by al3zama1 in /Users/al3zama1/Workspace/java/resume-projects/ecommerce-api)
+2023-02-23 10:53:54,684 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2023-02-23 10:53:54,701 INFO [restartedMain] org.springframework.boot.logging.DeferredLog: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-02-23 10:53:54,701 INFO [restartedMain] org.springframework.boot.logging.DeferredLog: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-02-23 10:53:55,051 INFO [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-23 10:53:55,082 INFO [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 27 ms. Found 5 JPA repository interfaces.
+2023-02-23 10:53:55,339 INFO [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2023-02-23 10:53:55,347 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-23 10:53:55,347 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Starting service [Tomcat]
+2023-02-23 10:53:55,348 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-02-23 10:53:55,376 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Initializing Spring embedded WebApplicationContext
+2023-02-23 10:53:55,377 INFO [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 676 ms
+2023-02-23 10:53:55,424 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: Flyway Community Edition 9.5.1 by Redgate
+2023-02-23 10:53:55,424 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#9.5.1
+2023-02-23 10:53:55,424 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: 
+2023-02-23 10:53:55,428 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2023-02-23 10:53:55,481 INFO [restartedMain] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@ee5ebef
+2023-02-23 10:53:55,482 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2023-02-23 10:53:55,495 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: Database: jdbc:postgresql://localhost:5432/ecommerce (PostgreSQL 15.1)
+2023-02-23 10:53:55,538 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: Successfully validated 5 migrations (execution time 00:00.016s)
+2023-02-23 10:53:55,550 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: Current version of schema "public": 005
+2023-02-23 10:53:55,550 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: Schema "public" is up to date. No migration necessary.
+2023-02-23 10:53:55,590 INFO [restartedMain] org.hibernate.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-23 10:53:55,617 INFO [restartedMain] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-02-23 10:53:55,685 WARN [restartedMain] org.hibernate.boot.internal.MetadataBuilderImpl$MetadataBuildingOptionsImpl: HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-02-23 10:53:55,738 INFO [restartedMain] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-02-23 10:53:56,083 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 10:53:56,084 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: relation "_order" does not exist, skipping
+2023-02-23 10:53:56,084 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 10:53:56,084 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: relation "cart" does not exist, skipping
+2023-02-23 10:53:56,084 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 10:53:56,084 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: relation "cart" does not exist, skipping
+2023-02-23 10:53:56,085 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 10:53:56,085 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: relation "order_item" does not exist, skipping
+2023-02-23 10:53:56,085 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 10:53:56,085 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: relation "order_item" does not exist, skipping
+2023-02-23 10:53:56,086 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 10:53:56,086 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: table "_order" does not exist, skipping
+2023-02-23 10:53:56,087 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 10:53:56,087 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: table "_user" does not exist, skipping
+2023-02-23 10:53:56,087 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 10:53:56,087 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: table "cart" does not exist, skipping
+2023-02-23 10:53:56,087 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 10:53:56,087 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: table "order_item" does not exist, skipping
+2023-02-23 10:53:56,088 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 10:53:56,088 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: table "product" does not exist, skipping
+2023-02-23 10:53:56,130 INFO [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-23 10:53:56,134 INFO [restartedMain] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-23 10:53:56,452 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-02-23 10:53:56,638 INFO [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain: Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5c42206c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@794024ba, org.springframework.security.web.context.SecurityContextHolderFilter@ee346c9, org.springframework.security.web.header.HeaderWriterFilter@599dd9e4, org.springframework.security.web.authentication.logout.LogoutFilter@956bcc3, com.example.ecommerce.api.config.JwtAuthFilter@2b7adeb2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5b3fb4c8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7ffc4d46, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1e093e91, org.springframework.security.web.session.SessionManagementFilter@5ed7a2f7, org.springframework.security.web.access.ExceptionTranslationFilter@4a782c8a, org.springframework.security.web.access.intercept.AuthorizationFilter@21e088e6]
+2023-02-23 10:53:56,746 INFO [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2023-02-23 10:53:56,755 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Starting ProtocolHandler ["http-nio-8080"]
+2023-02-23 10:53:56,763 INFO [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-23 10:53:56,769 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started EcommerceApiApplication in 2.22 seconds (process running for 2.789)
+2023-02-23 10:58:10,488 INFO [SpringApplicationShutdownHook] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-02-23 10:58:10,490 INFO [SpringApplicationShutdownHook] org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl: HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-02-23 10:58:10,521 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2023-02-23 10:58:10,522 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
+2023-02-23 12:27:58,423 INFO [main] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils: Could not detect default configuration classes for test class [com.example.ecommerce.api.controller.AuthenticationControllerTest]: AuthenticationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-02-23 12:27:58,488 INFO [main] org.springframework.boot.test.context.SpringBootTestContextBootstrapper: Found @SpringBootConfiguration com.example.ecommerce.api.EcommerceApiApplication for test class com.example.ecommerce.api.controller.AuthenticationControllerTest
+2023-02-23 12:27:58,661 INFO [background-preinit] org.hibernate.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.0.Final
+2023-02-23 12:27:58,678 INFO [main] org.springframework.boot.StartupInfoLogger: Starting AuthenticationControllerTest using Java 17.0.5 with PID 67591 (started by al3zama1 in /Users/al3zama1/Workspace/java/resume-projects/ecommerce-api)
+2023-02-23 12:27:58,679 INFO [main] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2023-02-23 12:27:59,248 WARN [main] org.springframework.context.support.AbstractApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtAuthFilter' defined in file [/Users/al3zama1/Workspace/java/resume-projects/ecommerce-api/target/classes/com/example/ecommerce/api/config/JwtAuthFilter.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'com.example.ecommerce.api.config.SecurityConfig': Unsatisfied dependency expressed through constructor parameter 1: No qualifying bean of type 'com.example.ecommerce.api.repository.ProductRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-02-23 12:27:59,251 INFO [main] org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger: 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-02-23 12:27:59,269 ERROR [main] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter: 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in com.example.ecommerce.api.config.SecurityConfig required a bean of type 'com.example.ecommerce.api.repository.ProductRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.example.ecommerce.api.repository.ProductRepository' in your configuration.
+
+2023-02-23 12:27:59,272 ERROR [main] org.springframework.test.context.TestContextManager: Caught exception while allowing TestExecutionListener [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener] to prepare test instance [com.example.ecommerce.api.controller.AuthenticationControllerTest@6fb22ae3]
+java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@2424cb9d testClass = com.example.ecommerce.api.controller.AuthenticationControllerTest, locations = [], classes = [com.example.ecommerce.api.EcommerceApiApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceLocations = [], propertySourceProperties = ["org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper=true"], contextCustomizers = [[ImportsContextCustomizer@7f51f588 key = [com.example.ecommerce.api.config.WebSecurity, com.example.ecommerce.api.config.SecurityConfig, com.example.ecommerce.api.config.JwtService, com.example.ecommerce.api.config.UserAuthenticationEntryPoint, org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.context.MessageSourceAutoConfiguration, org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration, org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration, org.springframework.boot.autoconfigure.groovy.template.GroovyTemplateAutoConfiguration, org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration, org.springframework.boot.autoconfigure.hateoas.HypermediaAutoConfiguration, org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration, org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration, org.springframework.boot.autoconfigure.jsonb.JsonbAutoConfiguration, org.springframework.boot.autoconfigure.mustache.MustacheAutoConfiguration, org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration, org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration, org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration, org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@a8e6492, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@7b324585, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@c6a925c, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@55b5f5d2, org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@9da1, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@a0db5fea, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@446fb855, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@73ff4fae, org.springframework.boot.test.context.SpringBootTestAnnotation@3e8475eb], resourceBasePath = "src/main/webapp", contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:142)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:127)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.postProcessFields(MockitoTestExecutionListener.java:110)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.injectFields(MockitoTestExecutionListener.java:94)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.prepareTestInstance(MockitoTestExecutionListener.java:61)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:241)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:138)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:377)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:382)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:377)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:376)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:289)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:288)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:278)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:277)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:105)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:104)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:147)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:127)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:90)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:55)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:102)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtAuthFilter' defined in file [/Users/al3zama1/Workspace/java/resume-projects/ecommerce-api/target/classes/com/example/ecommerce/api/config/JwtAuthFilter.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'com.example.ecommerce.api.config.SecurityConfig': Unsatisfied dependency expressed through constructor parameter 1: No qualifying bean of type 'com.example.ecommerce.api.repository.ProductRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:798)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:245)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1344)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1188)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:961)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:915)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:584)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:432)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:137)
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:59)
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:47)
+	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1386)
+	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:543)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:137)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:108)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:184)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:118)
+	... 73 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.example.ecommerce.api.config.SecurityConfig': Unsatisfied dependency expressed through constructor parameter 1: No qualifying bean of type 'com.example.ecommerce.api.repository.ProductRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:798)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:245)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1344)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1188)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:415)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1324)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1161)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1405)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1325)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:885)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
+	... 97 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.example.ecommerce.api.repository.ProductRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1812)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1371)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1325)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:885)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
+	... 120 common frames omitted
+2023-02-23 12:29:02,849 INFO [background-preinit] org.hibernate.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.0.Final
+2023-02-23 12:29:02,864 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting EcommerceApiApplication using Java 17.0.5 with PID 67735 (/Users/al3zama1/Workspace/java/resume-projects/ecommerce-api/target/classes started by al3zama1 in /Users/al3zama1/Workspace/java/resume-projects/ecommerce-api)
+2023-02-23 12:29:02,865 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2023-02-23 12:29:02,883 INFO [restartedMain] org.springframework.boot.logging.DeferredLog: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-02-23 12:29:02,883 INFO [restartedMain] org.springframework.boot.logging.DeferredLog: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-02-23 12:29:03,219 INFO [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-23 12:29:03,246 INFO [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 24 ms. Found 5 JPA repository interfaces.
+2023-02-23 12:29:03,520 INFO [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2023-02-23 12:29:03,524 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-23 12:29:03,524 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Starting service [Tomcat]
+2023-02-23 12:29:03,524 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-02-23 12:29:03,548 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Initializing Spring embedded WebApplicationContext
+2023-02-23 12:29:03,548 INFO [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 665 ms
+2023-02-23 12:29:03,595 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: Flyway Community Edition 9.5.1 by Redgate
+2023-02-23 12:29:03,595 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#9.5.1
+2023-02-23 12:29:03,595 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: 
+2023-02-23 12:29:03,599 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2023-02-23 12:29:03,664 INFO [restartedMain] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@513b9873
+2023-02-23 12:29:03,665 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2023-02-23 12:29:03,673 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: Database: jdbc:postgresql://localhost:5432/ecommerce (PostgreSQL 15.1)
+2023-02-23 12:29:03,692 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: Successfully validated 5 migrations (execution time 00:00.011s)
+2023-02-23 12:29:03,703 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: Current version of schema "public": 005
+2023-02-23 12:29:03,704 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: Schema "public" is up to date. No migration necessary.
+2023-02-23 12:29:03,750 INFO [restartedMain] org.hibernate.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-23 12:29:03,775 INFO [restartedMain] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-02-23 12:29:03,844 WARN [restartedMain] org.hibernate.boot.internal.MetadataBuilderImpl$MetadataBuildingOptionsImpl: HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-02-23 12:29:03,898 INFO [restartedMain] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-02-23 12:29:04,262 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:29:04,262 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: relation "_order" does not exist, skipping
+2023-02-23 12:29:04,262 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:29:04,262 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: relation "cart" does not exist, skipping
+2023-02-23 12:29:04,263 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:29:04,263 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: relation "cart" does not exist, skipping
+2023-02-23 12:29:04,263 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:29:04,263 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: relation "order_item" does not exist, skipping
+2023-02-23 12:29:04,264 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:29:04,264 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: relation "order_item" does not exist, skipping
+2023-02-23 12:29:04,264 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:29:04,265 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: table "_order" does not exist, skipping
+2023-02-23 12:29:04,265 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:29:04,265 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: table "_user" does not exist, skipping
+2023-02-23 12:29:04,265 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:29:04,265 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: table "cart" does not exist, skipping
+2023-02-23 12:29:04,266 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:29:04,266 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: table "order_item" does not exist, skipping
+2023-02-23 12:29:04,266 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:29:04,266 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: table "product" does not exist, skipping
+2023-02-23 12:29:04,308 INFO [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-23 12:29:04,312 INFO [restartedMain] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-23 12:29:04,630 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-02-23 12:29:04,830 INFO [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain: Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@23fa58c0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@47ca7837, org.springframework.security.web.context.SecurityContextHolderFilter@7439f7de, org.springframework.security.web.header.HeaderWriterFilter@798e2b26, org.springframework.security.web.authentication.logout.LogoutFilter@7a8c4998, com.example.ecommerce.api.config.JwtAuthFilter@34863f7b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5e5df1b9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4c7fba09, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1df72831, org.springframework.security.web.session.SessionManagementFilter@33b329e8, org.springframework.security.web.access.ExceptionTranslationFilter@1e9051ee, org.springframework.security.web.access.intercept.AuthorizationFilter@5d573078]
+2023-02-23 12:29:04,939 INFO [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2023-02-23 12:29:04,949 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Starting ProtocolHandler ["http-nio-8080"]
+2023-02-23 12:29:04,957 INFO [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-23 12:29:04,963 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started EcommerceApiApplication in 2.232 seconds (process running for 2.699)
+2023-02-23 12:29:09,573 INFO [SpringApplicationShutdownHook] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-02-23 12:29:09,574 INFO [SpringApplicationShutdownHook] org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl: HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-02-23 12:29:09,586 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2023-02-23 12:29:09,587 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
+2023-02-23 12:29:18,886 INFO [main] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils: Could not detect default configuration classes for test class [com.example.ecommerce.api.controller.AuthenticationControllerTest]: AuthenticationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-02-23 12:29:18,951 INFO [main] org.springframework.boot.test.context.SpringBootTestContextBootstrapper: Found @SpringBootConfiguration com.example.ecommerce.api.EcommerceApiApplication for test class com.example.ecommerce.api.controller.AuthenticationControllerTest
+2023-02-23 12:29:19,132 INFO [background-preinit] org.hibernate.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.0.Final
+2023-02-23 12:29:19,151 INFO [main] org.springframework.boot.StartupInfoLogger: Starting AuthenticationControllerTest using Java 17.0.5 with PID 67781 (started by al3zama1 in /Users/al3zama1/Workspace/java/resume-projects/ecommerce-api)
+2023-02-23 12:29:19,153 INFO [main] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2023-02-23 12:29:19,765 WARN [main] org.springframework.context.support.AbstractApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtAuthFilter' defined in file [/Users/al3zama1/Workspace/java/resume-projects/ecommerce-api/target/classes/com/example/ecommerce/api/config/JwtAuthFilter.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'com.example.ecommerce.api.config.SecurityConfig': Unsatisfied dependency expressed through constructor parameter 1: No qualifying bean of type 'com.example.ecommerce.api.repository.ProductRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-02-23 12:29:19,767 INFO [main] org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger: 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-02-23 12:29:19,776 ERROR [main] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter: 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in com.example.ecommerce.api.config.SecurityConfig required a bean of type 'com.example.ecommerce.api.repository.ProductRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.example.ecommerce.api.repository.ProductRepository' in your configuration.
+
+2023-02-23 12:29:19,779 ERROR [main] org.springframework.test.context.TestContextManager: Caught exception while allowing TestExecutionListener [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener] to prepare test instance [com.example.ecommerce.api.controller.AuthenticationControllerTest@5e68be2]
+java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@2fbd390 testClass = com.example.ecommerce.api.controller.AuthenticationControllerTest, locations = [], classes = [com.example.ecommerce.api.EcommerceApiApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceLocations = [], propertySourceProperties = ["org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper=true"], contextCustomizers = [[ImportsContextCustomizer@166b11e key = [com.example.ecommerce.api.config.WebSecurity, com.example.ecommerce.api.config.SecurityConfig, com.example.ecommerce.api.config.JwtService, com.example.ecommerce.api.config.UserAuthenticationEntryPoint, org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.context.MessageSourceAutoConfiguration, org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration, org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration, org.springframework.boot.autoconfigure.groovy.template.GroovyTemplateAutoConfiguration, org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration, org.springframework.boot.autoconfigure.hateoas.HypermediaAutoConfiguration, org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration, org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration, org.springframework.boot.autoconfigure.jsonb.JsonbAutoConfiguration, org.springframework.boot.autoconfigure.mustache.MustacheAutoConfiguration, org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration, org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration, org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration, org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@a8e6492, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@7b324585, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@c6a925c, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@55b5f5d2, org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@9da1, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@a0db5fea, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@446fb855, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@73ff4fae, org.springframework.boot.test.context.SpringBootTestAnnotation@3e8475eb], resourceBasePath = "src/main/webapp", contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:142)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:127)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.postProcessFields(MockitoTestExecutionListener.java:110)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.injectFields(MockitoTestExecutionListener.java:94)
+	at org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.prepareTestInstance(MockitoTestExecutionListener.java:61)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:241)
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:138)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:377)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:382)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:377)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:376)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:289)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:288)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:278)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:277)
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:105)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:104)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:147)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:127)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:90)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:55)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:102)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtAuthFilter' defined in file [/Users/al3zama1/Workspace/java/resume-projects/ecommerce-api/target/classes/com/example/ecommerce/api/config/JwtAuthFilter.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'com.example.ecommerce.api.config.SecurityConfig': Unsatisfied dependency expressed through constructor parameter 1: No qualifying bean of type 'com.example.ecommerce.api.repository.ProductRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:798)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:245)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1344)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1188)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:961)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:915)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:584)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:432)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:137)
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:59)
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:47)
+	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1386)
+	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:543)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:137)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:108)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:184)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:118)
+	... 73 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.example.ecommerce.api.config.SecurityConfig': Unsatisfied dependency expressed through constructor parameter 1: No qualifying bean of type 'com.example.ecommerce.api.repository.ProductRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:798)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:245)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1344)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1188)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:415)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1324)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1161)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1405)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1325)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:885)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
+	... 97 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.example.ecommerce.api.repository.ProductRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1812)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1371)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1325)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:885)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
+	... 120 common frames omitted
+2023-02-23 12:29:52,256 INFO [main] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils: Could not detect default configuration classes for test class [com.example.ecommerce.api.controller.AuthenticationControllerTest]: AuthenticationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-02-23 12:29:52,323 INFO [main] org.springframework.boot.test.context.SpringBootTestContextBootstrapper: Found @SpringBootConfiguration com.example.ecommerce.api.EcommerceApiApplication for test class com.example.ecommerce.api.controller.AuthenticationControllerTest
+2023-02-23 12:29:52,489 INFO [background-preinit] org.hibernate.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.0.Final
+2023-02-23 12:29:52,504 INFO [main] org.springframework.boot.StartupInfoLogger: Starting AuthenticationControllerTest using Java 17.0.5 with PID 67851 (started by al3zama1 in /Users/al3zama1/Workspace/java/resume-projects/ecommerce-api)
+2023-02-23 12:29:52,505 INFO [main] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2023-02-23 12:29:53,224 INFO [main] org.springframework.security.web.DefaultSecurityFilterChain: Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@984de01, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@58cda03f, org.springframework.security.web.context.SecurityContextHolderFilter@3316527e, org.springframework.security.web.header.HeaderWriterFilter@631bc9f4, org.springframework.security.web.authentication.logout.LogoutFilter@118cbded, com.example.ecommerce.api.config.JwtAuthFilter@b8a144e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@15186ce0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@249b54af, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7757a37f, org.springframework.security.web.session.SessionManagementFilter@678586f0, org.springframework.security.web.access.ExceptionTranslationFilter@1f26b992, org.springframework.security.web.access.intercept.AuthorizationFilter@48632f69]
+2023-02-23 12:29:53,305 INFO [main] org.springframework.mock.web.MockServletContext: Initializing Spring TestDispatcherServlet ''
+2023-02-23 12:29:53,305 INFO [main] org.springframework.web.servlet.FrameworkServlet: Initializing Servlet ''
+2023-02-23 12:29:53,306 INFO [main] org.springframework.web.servlet.FrameworkServlet: Completed initialization in 1 ms
+2023-02-23 12:29:53,320 INFO [main] org.springframework.boot.StartupInfoLogger: Started AuthenticationControllerTest in 0.959 seconds (process running for 1.539)
+2023-02-23 12:30:14,055 INFO [main] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils: Could not detect default configuration classes for test class [com.example.ecommerce.api.controller.AuthenticationControllerTest]: AuthenticationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-02-23 12:30:14,121 INFO [main] org.springframework.boot.test.context.SpringBootTestContextBootstrapper: Found @SpringBootConfiguration com.example.ecommerce.api.EcommerceApiApplication for test class com.example.ecommerce.api.controller.AuthenticationControllerTest
+2023-02-23 12:30:14,291 INFO [background-preinit] org.hibernate.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.0.Final
+2023-02-23 12:30:14,306 INFO [main] org.springframework.boot.StartupInfoLogger: Starting AuthenticationControllerTest using Java 17.0.5 with PID 67896 (started by al3zama1 in /Users/al3zama1/Workspace/java/resume-projects/ecommerce-api)
+2023-02-23 12:30:14,307 INFO [main] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2023-02-23 12:30:15,010 INFO [main] org.springframework.security.web.DefaultSecurityFilterChain: Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@58cda03f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7757a37f, org.springframework.security.web.context.SecurityContextHolderFilter@786ff0ea, org.springframework.security.web.header.HeaderWriterFilter@642c72cf, org.springframework.security.web.authentication.logout.LogoutFilter@4cc26df, com.example.ecommerce.api.config.JwtAuthFilter@5fb8dc01, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@745926c3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@194911c1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2109a691, org.springframework.security.web.session.SessionManagementFilter@5ad6f98e, org.springframework.security.web.access.ExceptionTranslationFilter@2f60cbf2, org.springframework.security.web.access.intercept.AuthorizationFilter@5fde1d64]
+2023-02-23 12:30:15,087 INFO [main] org.springframework.mock.web.MockServletContext: Initializing Spring TestDispatcherServlet ''
+2023-02-23 12:30:15,087 INFO [main] org.springframework.web.servlet.FrameworkServlet: Initializing Servlet ''
+2023-02-23 12:30:15,088 INFO [main] org.springframework.web.servlet.FrameworkServlet: Completed initialization in 1 ms
+2023-02-23 12:30:15,103 INFO [main] org.springframework.boot.StartupInfoLogger: Started AuthenticationControllerTest in 0.946 seconds (process running for 1.605)
+2023-02-23 12:35:08,667 INFO [main] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils: Could not detect default configuration classes for test class [com.example.ecommerce.api.controller.AuthenticationControllerTest]: AuthenticationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-02-23 12:35:08,738 INFO [main] org.springframework.boot.test.context.SpringBootTestContextBootstrapper: Found @SpringBootConfiguration com.example.ecommerce.api.EcommerceApiApplication for test class com.example.ecommerce.api.controller.AuthenticationControllerTest
+2023-02-23 12:35:08,912 INFO [background-preinit] org.hibernate.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.0.Final
+2023-02-23 12:35:08,929 INFO [main] org.springframework.boot.StartupInfoLogger: Starting AuthenticationControllerTest using Java 17.0.5 with PID 68517 (started by al3zama1 in /Users/al3zama1/Workspace/java/resume-projects/ecommerce-api)
+2023-02-23 12:35:08,931 INFO [main] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2023-02-23 12:35:09,682 INFO [main] org.springframework.security.web.DefaultSecurityFilterChain: Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@297bd171, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@118cbded, org.springframework.security.web.context.SecurityContextHolderFilter@4e6cbdf1, org.springframework.security.web.header.HeaderWriterFilter@141bb6b8, org.springframework.security.web.authentication.logout.LogoutFilter@30798137, com.example.ecommerce.api.config.JwtAuthFilter@4bf4680c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5a13f1f7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@210a26b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4cc26df, org.springframework.security.web.session.SessionManagementFilter@2f60cbf2, org.springframework.security.web.access.ExceptionTranslationFilter@4fa0ee7e, org.springframework.security.web.access.intercept.AuthorizationFilter@40bf0e15]
+2023-02-23 12:35:09,770 INFO [main] org.springframework.mock.web.MockServletContext: Initializing Spring TestDispatcherServlet ''
+2023-02-23 12:35:09,770 INFO [main] org.springframework.web.servlet.FrameworkServlet: Initializing Servlet ''
+2023-02-23 12:35:09,771 INFO [main] org.springframework.web.servlet.FrameworkServlet: Completed initialization in 1 ms
+2023-02-23 12:35:09,786 INFO [main] org.springframework.boot.StartupInfoLogger: Started AuthenticationControllerTest in 1.009 seconds (process running for 1.6)
+2023-02-23 12:36:30,924 INFO [main] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils: Could not detect default configuration classes for test class [com.example.ecommerce.api.controller.AuthenticationControllerTest]: AuthenticationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-02-23 12:36:30,989 INFO [main] org.springframework.boot.test.context.SpringBootTestContextBootstrapper: Found @SpringBootConfiguration com.example.ecommerce.api.EcommerceApiApplication for test class com.example.ecommerce.api.controller.AuthenticationControllerTest
+2023-02-23 12:36:31,163 INFO [background-preinit] org.hibernate.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.0.Final
+2023-02-23 12:36:31,178 INFO [main] org.springframework.boot.StartupInfoLogger: Starting AuthenticationControllerTest using Java 17.0.5 with PID 68689 (started by al3zama1 in /Users/al3zama1/Workspace/java/resume-projects/ecommerce-api)
+2023-02-23 12:36:31,179 INFO [main] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2023-02-23 12:36:31,881 INFO [main] org.springframework.security.web.DefaultSecurityFilterChain: Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@40bf0e15, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2c77344f, org.springframework.security.web.context.SecurityContextHolderFilter@2f60cbf2, org.springframework.security.web.header.HeaderWriterFilter@37ffe4f3, org.springframework.security.web.authentication.logout.LogoutFilter@46c662f2, com.example.ecommerce.api.config.JwtAuthFilter@6d6039df, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@642c72cf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5dae5a70, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@121ddca4, org.springframework.security.web.session.SessionManagementFilter@6335f04a, org.springframework.security.web.access.ExceptionTranslationFilter@7ab2ba47, org.springframework.security.web.access.intercept.AuthorizationFilter@5ed65e4b]
+2023-02-23 12:36:31,955 INFO [main] org.springframework.mock.web.MockServletContext: Initializing Spring TestDispatcherServlet ''
+2023-02-23 12:36:31,955 INFO [main] org.springframework.web.servlet.FrameworkServlet: Initializing Servlet ''
+2023-02-23 12:36:31,956 INFO [main] org.springframework.web.servlet.FrameworkServlet: Completed initialization in 1 ms
+2023-02-23 12:36:31,974 INFO [main] org.springframework.boot.StartupInfoLogger: Started AuthenticationControllerTest in 0.948 seconds (process running for 1.525)
+2023-02-23 12:37:17,344 INFO [background-preinit] org.hibernate.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.0.Final
+2023-02-23 12:37:17,359 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting EcommerceApiApplication using Java 17.0.5 with PID 68780 (/Users/al3zama1/Workspace/java/resume-projects/ecommerce-api/target/classes started by al3zama1 in /Users/al3zama1/Workspace/java/resume-projects/ecommerce-api)
+2023-02-23 12:37:17,360 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2023-02-23 12:37:17,378 INFO [restartedMain] org.springframework.boot.logging.DeferredLog: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-02-23 12:37:17,379 INFO [restartedMain] org.springframework.boot.logging.DeferredLog: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-02-23 12:37:17,723 INFO [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-23 12:37:17,752 INFO [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 25 ms. Found 5 JPA repository interfaces.
+2023-02-23 12:37:17,994 INFO [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2023-02-23 12:37:18,002 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-23 12:37:18,002 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Starting service [Tomcat]
+2023-02-23 12:37:18,002 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-02-23 12:37:18,030 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Initializing Spring embedded WebApplicationContext
+2023-02-23 12:37:18,030 INFO [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 651 ms
+2023-02-23 12:37:18,077 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: Flyway Community Edition 9.5.1 by Redgate
+2023-02-23 12:37:18,077 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#9.5.1
+2023-02-23 12:37:18,077 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: 
+2023-02-23 12:37:18,081 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2023-02-23 12:37:18,145 INFO [restartedMain] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1e245d30
+2023-02-23 12:37:18,145 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2023-02-23 12:37:18,153 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: Database: jdbc:postgresql://localhost:5432/ecommerce (PostgreSQL 15.1)
+2023-02-23 12:37:18,174 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: Successfully validated 5 migrations (execution time 00:00.012s)
+2023-02-23 12:37:18,187 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: Current version of schema "public": 005
+2023-02-23 12:37:18,187 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: Schema "public" is up to date. No migration necessary.
+2023-02-23 12:37:18,225 INFO [restartedMain] org.hibernate.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-23 12:37:18,252 INFO [restartedMain] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-02-23 12:37:18,331 WARN [restartedMain] org.hibernate.boot.internal.MetadataBuilderImpl$MetadataBuildingOptionsImpl: HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-02-23 12:37:18,383 INFO [restartedMain] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-02-23 12:37:18,742 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:37:18,742 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: relation "_order" does not exist, skipping
+2023-02-23 12:37:18,742 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:37:18,743 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: relation "cart" does not exist, skipping
+2023-02-23 12:37:18,743 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:37:18,743 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: relation "cart" does not exist, skipping
+2023-02-23 12:37:18,743 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:37:18,743 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: relation "order_item" does not exist, skipping
+2023-02-23 12:37:18,744 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:37:18,744 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: relation "order_item" does not exist, skipping
+2023-02-23 12:37:18,744 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:37:18,744 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: table "_order" does not exist, skipping
+2023-02-23 12:37:18,745 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:37:18,745 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: table "_user" does not exist, skipping
+2023-02-23 12:37:18,745 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:37:18,745 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: table "cart" does not exist, skipping
+2023-02-23 12:37:18,745 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:37:18,745 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: table "order_item" does not exist, skipping
+2023-02-23 12:37:18,746 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:37:18,746 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: table "product" does not exist, skipping
+2023-02-23 12:37:18,789 INFO [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-23 12:37:18,793 INFO [restartedMain] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-23 12:37:19,110 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-02-23 12:37:19,296 INFO [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain: Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1db785ee, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1d25994d, org.springframework.security.web.context.SecurityContextHolderFilter@f4994b6, org.springframework.security.web.header.HeaderWriterFilter@3716c1e5, org.springframework.security.web.authentication.logout.LogoutFilter@45326277, com.example.ecommerce.api.config.JwtAuthFilter@f06365b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@33b329e8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5e6f6cd8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5d573078, org.springframework.security.web.session.SessionManagementFilter@3c092558, org.springframework.security.web.access.ExceptionTranslationFilter@8e80e66, org.springframework.security.web.access.intercept.AuthorizationFilter@52fa5d08]
+2023-02-23 12:37:19,404 INFO [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2023-02-23 12:37:19,417 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Starting ProtocolHandler ["http-nio-8080"]
+2023-02-23 12:37:19,424 INFO [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-23 12:37:19,431 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started EcommerceApiApplication in 2.206 seconds (process running for 2.829)
+2023-02-23 12:37:22,226 INFO [http-nio-8080-exec-2] org.apache.juli.logging.DirectJDKLog: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-23 12:37:22,227 INFO [http-nio-8080-exec-2] org.springframework.web.servlet.FrameworkServlet: Initializing Servlet 'dispatcherServlet'
+2023-02-23 12:37:22,228 INFO [http-nio-8080-exec-2] org.springframework.web.servlet.FrameworkServlet: Completed initialization in 1 ms
+2023-02-23 12:37:22,299 WARN [http-nio-8080-exec-2] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver: Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('/' (code 47)): maybe a (non-standard) comment? (not recognized as one since Feature 'ALLOW_COMMENTS' not enabled for parser)]
+2023-02-23 12:37:38,637 WARN [http-nio-8080-exec-4] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver: Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<java.lang.Void> com.example.ecommerce.api.controller.AuthenticationController.signUp(com.example.ecommerce.api.mapstruct.dto.user.RegistrationRequestDto): [Field error in object 'registrationRequestDto' on field 'email': rejected value [null]; codes [NotBlank.registrationRequestDto.email,NotBlank.email,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [registrationRequestDto.email,email]; arguments []; default message [email]]; default message [must not be blank]] ]
+2023-02-23 12:48:29,540 INFO [SpringApplicationShutdownHook] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-02-23 12:48:29,542 INFO [SpringApplicationShutdownHook] org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl: HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-02-23 12:48:29,572 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2023-02-23 12:48:29,574 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
+2023-02-23 12:48:33,534 INFO [background-preinit] org.hibernate.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.0.Final
+2023-02-23 12:48:33,549 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting EcommerceApiApplication using Java 17.0.5 with PID 70195 (/Users/al3zama1/Workspace/java/resume-projects/ecommerce-api/target/classes started by al3zama1 in /Users/al3zama1/Workspace/java/resume-projects/ecommerce-api)
+2023-02-23 12:48:33,550 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2023-02-23 12:48:33,567 INFO [restartedMain] org.springframework.boot.logging.DeferredLog: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-02-23 12:48:33,568 INFO [restartedMain] org.springframework.boot.logging.DeferredLog: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-02-23 12:48:33,890 INFO [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-23 12:48:33,918 INFO [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 25 ms. Found 5 JPA repository interfaces.
+2023-02-23 12:48:34,163 INFO [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2023-02-23 12:48:34,171 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-23 12:48:34,172 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Starting service [Tomcat]
+2023-02-23 12:48:34,172 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-02-23 12:48:34,195 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Initializing Spring embedded WebApplicationContext
+2023-02-23 12:48:34,195 INFO [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 627 ms
+2023-02-23 12:48:34,240 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: Flyway Community Edition 9.5.1 by Redgate
+2023-02-23 12:48:34,240 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#9.5.1
+2023-02-23 12:48:34,240 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: 
+2023-02-23 12:48:34,244 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2023-02-23 12:48:34,287 INFO [restartedMain] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7fe31997
+2023-02-23 12:48:34,287 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2023-02-23 12:48:34,295 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: Database: jdbc:postgresql://localhost:5432/ecommerce (PostgreSQL 15.1)
+2023-02-23 12:48:34,315 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: Successfully validated 5 migrations (execution time 00:00.011s)
+2023-02-23 12:48:34,327 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: Current version of schema "public": 005
+2023-02-23 12:48:34,327 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: Schema "public" is up to date. No migration necessary.
+2023-02-23 12:48:34,365 INFO [restartedMain] org.hibernate.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-23 12:48:34,388 INFO [restartedMain] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-02-23 12:48:34,452 WARN [restartedMain] org.hibernate.boot.internal.MetadataBuilderImpl$MetadataBuildingOptionsImpl: HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-02-23 12:48:34,506 INFO [restartedMain] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-02-23 12:48:34,863 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:48:34,863 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: relation "_order" does not exist, skipping
+2023-02-23 12:48:34,863 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:48:34,863 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: relation "cart" does not exist, skipping
+2023-02-23 12:48:34,864 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:48:34,864 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: relation "cart" does not exist, skipping
+2023-02-23 12:48:34,864 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:48:34,864 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: relation "order_item" does not exist, skipping
+2023-02-23 12:48:34,864 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:48:34,864 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: relation "order_item" does not exist, skipping
+2023-02-23 12:48:34,865 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:48:34,865 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: table "_order" does not exist, skipping
+2023-02-23 12:48:34,865 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:48:34,865 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: table "_user" does not exist, skipping
+2023-02-23 12:48:34,866 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:48:34,866 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: table "cart" does not exist, skipping
+2023-02-23 12:48:34,866 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:48:34,866 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: table "order_item" does not exist, skipping
+2023-02-23 12:48:34,866 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:48:34,866 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: table "product" does not exist, skipping
+2023-02-23 12:48:34,900 INFO [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-23 12:48:34,904 INFO [restartedMain] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-23 12:48:35,212 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-02-23 12:48:35,395 INFO [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain: Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1918673d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@414c38e, org.springframework.security.web.context.SecurityContextHolderFilter@37a35e2a, org.springframework.security.web.header.HeaderWriterFilter@7d1e5c2a, org.springframework.security.web.authentication.logout.LogoutFilter@76dca6b2, com.example.ecommerce.api.config.JwtAuthFilter@166b06aa, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7b1c2f05, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7b5054f4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5b62375b, org.springframework.security.web.session.SessionManagementFilter@7eac0cb0, org.springframework.security.web.access.ExceptionTranslationFilter@638e6ee0, org.springframework.security.web.access.intercept.AuthorizationFilter@392496b6]
+2023-02-23 12:48:35,500 INFO [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2023-02-23 12:48:35,514 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Starting ProtocolHandler ["http-nio-8080"]
+2023-02-23 12:48:35,522 INFO [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-23 12:48:35,528 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started EcommerceApiApplication in 2.112 seconds (process running for 2.631)
+2023-02-23 12:48:41,433 INFO [http-nio-8080-exec-2] org.apache.juli.logging.DirectJDKLog: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-23 12:48:41,433 INFO [http-nio-8080-exec-2] org.springframework.web.servlet.FrameworkServlet: Initializing Servlet 'dispatcherServlet'
+2023-02-23 12:48:41,434 INFO [http-nio-8080-exec-2] org.springframework.web.servlet.FrameworkServlet: Completed initialization in 1 ms
+2023-02-23 12:48:41,532 WARN [http-nio-8080-exec-2] org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver: Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<java.lang.Void> com.example.ecommerce.api.controller.AuthenticationController.signUp(com.example.ecommerce.api.mapstruct.dto.user.RegistrationRequestDto): [Field error in object 'registrationRequestDto' on field 'email': rejected value [null]; codes [NotBlank.registrationRequestDto.email,NotBlank.email,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [registrationRequestDto.email,email]; arguments []; default message [email]]; default message [must not be blank]] ]
+2023-02-23 12:49:37,071 INFO [SpringApplicationShutdownHook] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-02-23 12:49:37,073 INFO [SpringApplicationShutdownHook] org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl: HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-02-23 12:49:37,110 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2023-02-23 12:49:37,111 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
+2023-02-23 12:49:38,924 INFO [background-preinit] org.hibernate.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.0.Final
+2023-02-23 12:49:38,941 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Starting EcommerceApiApplication using Java 17.0.5 with PID 70341 (/Users/al3zama1/Workspace/java/resume-projects/ecommerce-api/target/classes started by al3zama1 in /Users/al3zama1/Workspace/java/resume-projects/ecommerce-api)
+2023-02-23 12:49:38,941 INFO [restartedMain] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2023-02-23 12:49:38,961 INFO [restartedMain] org.springframework.boot.logging.DeferredLog: Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-02-23 12:49:38,962 INFO [restartedMain] org.springframework.boot.logging.DeferredLog: For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-02-23 12:49:39,293 INFO [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-23 12:49:39,320 INFO [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 24 ms. Found 5 JPA repository interfaces.
+2023-02-23 12:49:39,571 INFO [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port(s): 8080 (http)
+2023-02-23 12:49:39,576 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-23 12:49:39,577 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Starting service [Tomcat]
+2023-02-23 12:49:39,577 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-02-23 12:49:39,606 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Initializing Spring embedded WebApplicationContext
+2023-02-23 12:49:39,607 INFO [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 644 ms
+2023-02-23 12:49:39,657 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: Flyway Community Edition 9.5.1 by Redgate
+2023-02-23 12:49:39,658 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#9.5.1
+2023-02-23 12:49:39,658 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: 
+2023-02-23 12:49:39,662 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Starting...
+2023-02-23 12:49:39,706 INFO [restartedMain] com.zaxxer.hikari.pool.HikariPool: HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@295a4dbb
+2023-02-23 12:49:39,707 INFO [restartedMain] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Start completed.
+2023-02-23 12:49:39,714 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: Database: jdbc:postgresql://localhost:5432/ecommerce (PostgreSQL 15.1)
+2023-02-23 12:49:39,736 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: Successfully validated 5 migrations (execution time 00:00.012s)
+2023-02-23 12:49:39,750 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: Current version of schema "public": 005
+2023-02-23 12:49:39,751 INFO [restartedMain] org.flywaydb.core.internal.logging.slf4j.Slf4jLog: Schema "public" is up to date. No migration necessary.
+2023-02-23 12:49:39,786 INFO [restartedMain] org.hibernate.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-23 12:49:39,807 INFO [restartedMain] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-02-23 12:49:39,879 WARN [restartedMain] org.hibernate.boot.internal.MetadataBuilderImpl$MetadataBuildingOptionsImpl: HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-02-23 12:49:39,929 INFO [restartedMain] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-02-23 12:49:40,269 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:49:40,269 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: relation "_order" does not exist, skipping
+2023-02-23 12:49:40,270 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:49:40,270 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: relation "cart" does not exist, skipping
+2023-02-23 12:49:40,270 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:49:40,270 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: relation "cart" does not exist, skipping
+2023-02-23 12:49:40,270 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:49:40,270 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: relation "order_item" does not exist, skipping
+2023-02-23 12:49:40,271 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:49:40,271 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: relation "order_item" does not exist, skipping
+2023-02-23 12:49:40,271 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:49:40,271 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: table "_order" does not exist, skipping
+2023-02-23 12:49:40,272 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:49:40,272 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: table "_user" does not exist, skipping
+2023-02-23 12:49:40,272 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:49:40,272 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: table "cart" does not exist, skipping
+2023-02-23 12:49:40,272 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:49:40,273 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: table "order_item" does not exist, skipping
+2023-02-23 12:49:40,273 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: SQL Warning Code: 0, SQLState: 00000
+2023-02-23 12:49:40,273 WARN [restartedMain] org.hibernate.engine.jdbc.spi.SqlExceptionHelper$StandardWarningHandler: table "product" does not exist, skipping
+2023-02-23 12:49:40,321 INFO [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-23 12:49:40,325 INFO [restartedMain] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-23 12:49:40,634 WARN [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-02-23 12:49:40,816 INFO [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain: Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@17dfbab2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3eb306ab, org.springframework.security.web.context.SecurityContextHolderFilter@47ca7837, org.springframework.security.web.header.HeaderWriterFilter@35f284ba, org.springframework.security.web.authentication.logout.LogoutFilter@5211b06b, com.example.ecommerce.api.config.JwtAuthFilter@3295fb5b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2dc2aa33, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5429b877, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4259df2c, org.springframework.security.web.session.SessionManagementFilter@339d2f50, org.springframework.security.web.access.ExceptionTranslationFilter@27b7c4ed, org.springframework.security.web.access.intercept.AuthorizationFilter@445da309]
+2023-02-23 12:49:40,921 INFO [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer: LiveReload server is running on port 35729
+2023-02-23 12:49:40,931 INFO [restartedMain] org.apache.juli.logging.DirectJDKLog: Starting ProtocolHandler ["http-nio-8080"]
+2023-02-23 12:49:40,938 INFO [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-23 12:49:40,944 INFO [restartedMain] org.springframework.boot.StartupInfoLogger: Started EcommerceApiApplication in 2.149 seconds (process running for 2.563)
+2023-02-23 12:49:41,990 INFO [SpringApplicationShutdownHook] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-02-23 12:49:41,991 INFO [SpringApplicationShutdownHook] org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl: HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-02-23 12:49:42,011 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown initiated...
+2023-02-23 12:49:42,012 INFO [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource: HikariPool-1 - Shutdown completed.
+2023-02-23 12:49:55,962 INFO [main] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils: Could not detect default configuration classes for test class [com.example.ecommerce.api.controller.AuthenticationControllerTest]: AuthenticationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-02-23 12:49:56,025 INFO [main] org.springframework.boot.test.context.SpringBootTestContextBootstrapper: Found @SpringBootConfiguration com.example.ecommerce.api.EcommerceApiApplication for test class com.example.ecommerce.api.controller.AuthenticationControllerTest
+2023-02-23 12:49:56,190 INFO [background-preinit] org.hibernate.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.0.Final
+2023-02-23 12:49:56,206 INFO [main] org.springframework.boot.StartupInfoLogger: Starting AuthenticationControllerTest using Java 17.0.5 with PID 70391 (started by al3zama1 in /Users/al3zama1/Workspace/java/resume-projects/ecommerce-api)
+2023-02-23 12:49:56,206 INFO [main] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2023-02-23 12:49:56,901 INFO [main] org.springframework.security.web.DefaultSecurityFilterChain: Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@58cda03f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7757a37f, org.springframework.security.web.context.SecurityContextHolderFilter@786ff0ea, org.springframework.security.web.header.HeaderWriterFilter@642c72cf, org.springframework.security.web.authentication.logout.LogoutFilter@4cc26df, com.example.ecommerce.api.config.JwtAuthFilter@5fb8dc01, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@745926c3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@194911c1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2109a691, org.springframework.security.web.session.SessionManagementFilter@5ad6f98e, org.springframework.security.web.access.ExceptionTranslationFilter@2f60cbf2, org.springframework.security.web.access.intercept.AuthorizationFilter@5fde1d64]
+2023-02-23 12:49:56,975 INFO [main] org.springframework.mock.web.MockServletContext: Initializing Spring TestDispatcherServlet ''
+2023-02-23 12:49:56,975 INFO [main] org.springframework.web.servlet.FrameworkServlet: Initializing Servlet ''
+2023-02-23 12:49:56,976 INFO [main] org.springframework.web.servlet.FrameworkServlet: Completed initialization in 1 ms
+2023-02-23 12:49:56,990 INFO [main] org.springframework.boot.StartupInfoLogger: Started AuthenticationControllerTest in 0.929 seconds (process running for 1.505)
+2023-02-23 12:50:05,463 INFO [main] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils: Could not detect default configuration classes for test class [com.example.ecommerce.api.controller.AuthenticationControllerTest]: AuthenticationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-02-23 12:50:05,531 INFO [main] org.springframework.boot.test.context.SpringBootTestContextBootstrapper: Found @SpringBootConfiguration com.example.ecommerce.api.EcommerceApiApplication for test class com.example.ecommerce.api.controller.AuthenticationControllerTest
+2023-02-23 12:50:05,708 INFO [background-preinit] org.hibernate.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.0.Final
+2023-02-23 12:50:05,727 INFO [main] org.springframework.boot.StartupInfoLogger: Starting AuthenticationControllerTest using Java 17.0.5 with PID 70416 (started by al3zama1 in /Users/al3zama1/Workspace/java/resume-projects/ecommerce-api)
+2023-02-23 12:50:05,727 INFO [main] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2023-02-23 12:50:06,427 INFO [main] org.springframework.security.web.DefaultSecurityFilterChain: Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@734f8317, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7dd3981e, org.springframework.security.web.context.SecurityContextHolderFilter@4afdfc0f, org.springframework.security.web.header.HeaderWriterFilter@249b54af, org.springframework.security.web.authentication.logout.LogoutFilter@6451a288, com.example.ecommerce.api.config.JwtAuthFilter@6d6039df, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@30798137, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3f06ebe0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@59313495, org.springframework.security.web.session.SessionManagementFilter@1109730f, org.springframework.security.web.access.ExceptionTranslationFilter@75dd0f94, org.springframework.security.web.access.intercept.AuthorizationFilter@636dbfe7]
+2023-02-23 12:50:06,504 INFO [main] org.springframework.mock.web.MockServletContext: Initializing Spring TestDispatcherServlet ''
+2023-02-23 12:50:06,504 INFO [main] org.springframework.web.servlet.FrameworkServlet: Initializing Servlet ''
+2023-02-23 12:50:06,505 INFO [main] org.springframework.web.servlet.FrameworkServlet: Completed initialization in 1 ms
+2023-02-23 12:50:06,519 INFO [main] org.springframework.boot.StartupInfoLogger: Started AuthenticationControllerTest in 0.95 seconds (process running for 1.527)
+2023-02-23 12:50:14,030 INFO [main] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils: Could not detect default configuration classes for test class [com.example.ecommerce.api.controller.AuthenticationControllerTest]: AuthenticationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-02-23 12:50:14,091 INFO [main] org.springframework.boot.test.context.SpringBootTestContextBootstrapper: Found @SpringBootConfiguration com.example.ecommerce.api.EcommerceApiApplication for test class com.example.ecommerce.api.controller.AuthenticationControllerTest
+2023-02-23 12:50:14,259 INFO [background-preinit] org.hibernate.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.0.Final
+2023-02-23 12:50:14,276 INFO [main] org.springframework.boot.StartupInfoLogger: Starting AuthenticationControllerTest using Java 17.0.5 with PID 70436 (started by al3zama1 in /Users/al3zama1/Workspace/java/resume-projects/ecommerce-api)
+2023-02-23 12:50:14,277 INFO [main] org.springframework.boot.SpringApplication: No active profile set, falling back to 1 default profile: "default"
+2023-02-23 12:50:14,972 INFO [main] org.springframework.security.web.DefaultSecurityFilterChain: Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@40cf6254, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@40bf0e15, org.springframework.security.web.context.SecurityContextHolderFilter@1f26b992, org.springframework.security.web.header.HeaderWriterFilter@40fe8fd5, org.springframework.security.web.authentication.logout.LogoutFilter@1f42366, com.example.ecommerce.api.config.JwtAuthFilter@4bf4680c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@631bc9f4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5a13f1f7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2c77344f, org.springframework.security.web.session.SessionManagementFilter@640a8f93, org.springframework.security.web.access.ExceptionTranslationFilter@3739f3c9, org.springframework.security.web.access.intercept.AuthorizationFilter@1752e45c]
+2023-02-23 12:50:15,050 INFO [main] org.springframework.mock.web.MockServletContext: Initializing Spring TestDispatcherServlet ''
+2023-02-23 12:50:15,051 INFO [main] org.springframework.web.servlet.FrameworkServlet: Initializing Servlet ''
+2023-02-23 12:50:15,052 INFO [main] org.springframework.web.servlet.FrameworkServlet: Completed initialization in 1 ms
+2023-02-23 12:50:15,066 INFO [main] org.springframework.boot.StartupInfoLogger: Started AuthenticationControllerTest in 0.934 seconds (process running for 1.513)

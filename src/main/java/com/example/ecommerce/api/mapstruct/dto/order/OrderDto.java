@@ -1,16 +1,18 @@
-package com.example.ecommerce.api.dto.cart;
+package com.example.ecommerce.api.mapstruct.dto.order;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class CartItemDto {
+public class OrderDto {
     private long id;
-    private long productId;
-    private int quantity;
+    private LocalDateTime dateCreated;
+    private double totalPrice;
 }

@@ -1,14 +1,15 @@
 package com.example.ecommerce.api.service;
 
 import com.example.ecommerce.api.config.JwtService;
-import com.example.ecommerce.api.dto.user.AuthenticationRequestDto;
-import com.example.ecommerce.api.dto.user.AuthenticationResponseDto;
-import com.example.ecommerce.api.dto.user.RegistrationRequestDto;
+import com.example.ecommerce.api.mapstruct.dto.user.AuthenticationRequestDto;
+import com.example.ecommerce.api.mapstruct.dto.user.AuthenticationResponseDto;
+import com.example.ecommerce.api.mapstruct.dto.user.RegistrationRequestDto;
 import com.example.ecommerce.api.entity.User;
 import com.example.ecommerce.api.entity.UserRole;
 import com.example.ecommerce.api.exception.ConflictException;
 import com.example.ecommerce.api.exception.ExceptionMessages;
 import com.example.ecommerce.api.exception.InvalidCredentialsException;
+import com.example.ecommerce.api.mapstruct.mappers.UserMapper;
 import com.example.ecommerce.api.repository.UserRepository;
 import com.example.ecommerce.api.service.interfaces.IAuthenticationService;
 import lombok.RequiredArgsConstructor;
@@ -19,13 +20,14 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Optional;
 
 @Service
-@Transactional
 @RequiredArgsConstructor
+@Transactional
 public class AuthenticationService implements IAuthenticationService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
+    private final UserMapper userMapper;
 
     public void register(RegistrationRequestDto request) {
         // check if email is unique
@@ -38,13 +40,10 @@ public class AuthenticationService implements IAuthenticationService {
             throw new InvalidCredentialsException(ExceptionMessages.PASSWORDS_MUST_MATCH);
         }
 
-        User user = User.builder()
-                .firstName(request.getFirstName())
-                .lastName(request.getLastName())
-                .email(request.getEmail())
-                .password(passwordEncoder.encode(request.getPassword()))
-                .role(UserRole.USER)
-                .build();
+        User user = userMapper.mapRegistrationRequestDtoToUser(request);
+        user.setPassword(passwordEncoder.encode(request.getPassword()));
+        user.setRole(UserRole.USER);
+
         userRepository.save(user);
     }
 

@@ -1,6 +1,5 @@
-package com.example.ecommerce.api.dto.user;
+package com.example.ecommerce.api.mapstruct.dto.user;
 
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,10 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class AuthenticationRequestDto {
+public class AuthenticationResponseDto {
     @NotBlank
-    @Email
-    private String email;
-    @NotBlank
-    private String password;
+    private String token;
 }

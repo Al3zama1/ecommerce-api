@@ -1,8 +1,8 @@
 package com.example.ecommerce.api.service.interfaces;
 
-import com.example.ecommerce.api.dto.product.AddProductDto;
-import com.example.ecommerce.api.dto.product.ProductResponseDto;
-import com.example.ecommerce.api.dto.product.UpdateProductDto;
+import com.example.ecommerce.api.mapstruct.dto.product.AddProductDto;
+import com.example.ecommerce.api.mapstruct.dto.product.ProductResponseDto;
+import com.example.ecommerce.api.mapstruct.dto.product.UpdateProductDto;
 
 import java.util.List;
 

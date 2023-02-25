@@ -4,8 +4,8 @@ import com.example.ecommerce.api.config.JwtService;
 import com.example.ecommerce.api.config.SecurityConfig;
 import com.example.ecommerce.api.config.UserAuthenticationEntryPoint;
 import com.example.ecommerce.api.config.WebSecurity;
-import com.example.ecommerce.api.dto.user.AuthenticationRequestDto;
-import com.example.ecommerce.api.dto.user.RegistrationRequestDto;
+import com.example.ecommerce.api.mapstruct.dto.user.AuthenticationRequestDto;
+import com.example.ecommerce.api.mapstruct.dto.user.RegistrationRequestDto;
 import com.example.ecommerce.api.repository.UserRepository;
 import com.example.ecommerce.api.service.AuthenticationService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -19,10 +19,11 @@ import org.springframework.http.MediaType;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.test.web.servlet.MockMvc;
 
+
+import static com.example.ecommerce.api.ExceptionBodyResponseMatcher.exceptionMatcher;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.then;
-import static org.mockito.Mockito.times;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -47,7 +48,7 @@ class AuthenticationControllerTest {
     private static final String PASSWORD = "12345678";
 
     @Test
-    void shouldRegisterUserWhenInputIsValid() throws Exception {
+    void shouldReturn201WhenRegistrationIsSuccessful() throws Exception {
         // Given
         RegistrationRequestDto request = RegistrationRequestDto.builder()
                 .firstName("John")
@@ -66,22 +67,31 @@ class AuthenticationControllerTest {
 
         // Then
         ArgumentCaptor<RegistrationRequestDto> captor = ArgumentCaptor.forClass(RegistrationRequestDto.class);
-        then(authenticationService).should(times(1)).register(captor.capture());
+        then(authenticationService).should().register(captor.capture());
         assertThat(captor.getValue()).isEqualTo(request);
     }
 
     @Test
-    void shouldFailRegistrationWhenInputIsInvalid() throws Exception {
+    void shouldFailRegistrationAndReturn422WhenInputIsInvalid() throws Exception {
         // Given
-        RegistrationRequestDto request = RegistrationRequestDto.builder()
-                .email("john@gmail.com")
-                .build();
+        RegistrationRequestDto request = new RegistrationRequestDto();
+
 
         // When
         mockMvc.perform(post("/api/v1/signUp")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(request)))
-                .andExpect(status().isUnprocessableEntity());
+                .andExpect(status().isUnprocessableEntity())
+                .andExpect(exceptionMatcher()
+                        .containsError("firstName", "must not be blank"))
+                .andExpect(exceptionMatcher()
+                        .containsError("lastName", "must not be blank"))
+                .andExpect(exceptionMatcher()
+                        .containsError("password", "must not be blank"))
+                .andExpect(exceptionMatcher()
+                        .containsError("verifyPassword", "must not be blank"))
+                .andExpect(exceptionMatcher()
+                        .containsError("email", "must not be blank"));
 
         // Then
         then(authenticationService).shouldHaveNoInteractions();
@@ -102,11 +112,11 @@ class AuthenticationControllerTest {
                 .andExpect(status().isOk());
 
         // Then
-        then(authenticationService).should(times(1)).authenticate(any());
+        then(authenticationService).should().authenticate(any());
     }
 
     @Test
-    void shouldFailAuthenticationWhenInputIsInvalid() throws Exception {
+    void shouldFailAuthenticationAndReturn422WhenInputIsInvalid() throws Exception {
         // Given
         AuthenticationRequestDto request = AuthenticationRequestDto.builder()
                 .password("lsjdlfjsdl")
@@ -116,7 +126,9 @@ class AuthenticationControllerTest {
         mockMvc.perform(post("/api/v1/signIn")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(request)))
-                .andExpect(status().isUnprocessableEntity());
+                .andExpect(status().isUnprocessableEntity())
+                .andExpect(exceptionMatcher()
+                        .containsError("email", "must not be blank"));
 
         // Then
         then(authenticationService).shouldHaveNoInteractions();

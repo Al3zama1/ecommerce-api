@@ -4,13 +4,16 @@ import com.example.ecommerce.api.config.JwtService;
 import com.example.ecommerce.api.config.SecurityConfig;
 import com.example.ecommerce.api.config.UserAuthenticationEntryPoint;
 import com.example.ecommerce.api.config.WebSecurity;
-import com.example.ecommerce.api.dto.order.OrderItemDto;
+import com.example.ecommerce.api.entity.Order;
+import com.example.ecommerce.api.mapstruct.dto.order.OrderDto;
+import com.example.ecommerce.api.mapstruct.dto.order.OrderItemDto;
 import com.example.ecommerce.api.entity.User;
 import com.example.ecommerce.api.entity.UserRole;
 import com.example.ecommerce.api.repository.UserRepository;
 import com.example.ecommerce.api.service.interfaces.IOrderService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.hamcrest.Matchers;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -18,7 +21,8 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import uk.co.jemos.podam.api.PodamFactory;
+import uk.co.jemos.podam.api.PodamFactoryImpl;
 
 import java.util.List;
 
@@ -26,10 +30,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
+import static org.mockito.Mockito.mock;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(OrderController.class)
 @Import({WebSecurity.class, SecurityConfig.class, JwtService.class, UserAuthenticationEntryPoint.class})
@@ -43,8 +47,14 @@ class OrderControllerTest {
     private UserRepository userRepository;
     @MockBean
     private IOrderService orderService;
+    private static PodamFactory podamFactory;
 
     private static final String USERNAME = "john@gmail.com";
+
+    @BeforeAll
+    static void setUp() {
+        podamFactory = new PodamFactoryImpl();
+    }
 
     // tests to get all orders
     @Test
@@ -53,12 +63,15 @@ class OrderControllerTest {
         User user = User.builder()
                 .role(UserRole.USER)
                 .build();
-        given(orderService.getAllOrders(user)).willReturn(List.of());
+        OrderDto orderDto = podamFactory.manufacturePojo(OrderDto.class);
+
+
+        given(orderService.getAllOrders(user)).willReturn(List.of(orderDto));
 
         // When
         mockMvc.perform(get("/api/v1/orders")
                 .with(user(user)))
-                .andExpect(jsonPath("$.size()", Matchers.is(0)))
+                .andExpect(jsonPath("$.size()", Matchers.is(1)))
                 .andExpect(status().isOk());
 
         // Then
@@ -87,14 +100,12 @@ class OrderControllerTest {
         given(orderService.createOrder(user)).willReturn(1L);
 
         // When
-        MvcResult result = mockMvc.perform(post("/api/v1/orders")
+        mockMvc.perform(post("/api/v1/orders")
                 .with(user(user)))
                 .andExpect(status().isCreated())
-                .andReturn();
-
+                .andExpect(header().string("Location", "/api/v1/orders/1"));
         // Then
         then(orderService).should().createOrder(user);
-        assertThat(result.getResponse().getHeader("Location")).isEqualTo("/api/v1/orders/1");
     }
 
     @Test
@@ -117,7 +128,7 @@ class OrderControllerTest {
                 .role(UserRole.USER)
                 .build();
         long orderId = 1L;
-        OrderItemDto orderItem = OrderItemDto.builder().build();
+        OrderItemDto orderItem = podamFactory.manufacturePojo(OrderItemDto.class);
 
         given(orderService.getOrder(orderId, user)).willReturn(List.of(orderItem));
 
@@ -139,6 +150,19 @@ class OrderControllerTest {
         mockMvc.perform(get("/api/v1/orders/{orderId}", orderId)
                 .with(user(USERNAME)))
                 .andExpect(status().isUnprocessableEntity());
+
+        // Then
+        then(orderService).shouldHaveNoInteractions();
+    }
+
+    @Test
+    void shouldNotGetOrderWhenUserIsUnauthenticated() throws Exception {
+        // Given
+        long orderId = 1L;
+
+        // When
+        mockMvc.perform(get("/api/v1/orders/{orderId}", orderId))
+                .andExpect(status().isUnauthorized());
 
         // Then
         then(orderService).shouldHaveNoInteractions();

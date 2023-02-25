@@ -1,7 +1,7 @@
 package com.example.ecommerce.api.controller;
 
-import com.example.ecommerce.api.dto.order.OrderDto;
-import com.example.ecommerce.api.dto.order.OrderItemDto;
+import com.example.ecommerce.api.mapstruct.dto.order.OrderDto;
+import com.example.ecommerce.api.mapstruct.dto.order.OrderItemDto;
 import com.example.ecommerce.api.entity.User;
 import com.example.ecommerce.api.service.interfaces.IOrderService;
 import jakarta.validation.constraints.PositiveOrZero;
@@ -21,6 +21,7 @@ import java.util.List;
 public class OrderController {
 
     private final IOrderService orderService;
+
     @GetMapping
     public List<OrderDto> getAllOrders(@AuthenticationPrincipal User user) {
         return orderService.getAllOrders(user);

@@ -30,6 +30,23 @@ public class WebSecurity {
     private final JwtAuthFilter jwtAuthFilter;
     private final UserAuthenticationEntryPoint userAuthenticationEntryPoint;
 
+    private static final String[] AUTH_WHITELIST = {
+            // -- Swagger UI v2
+//            "/api-docs",
+//            "/api-docs/swagger-config",
+//            "/swagger-resources",
+//            "/swagger-resources/**",
+//            "/configuration/ui",
+//            "/configuration/security",
+//            "/swagger-ui.html",
+//            "/webjars/**",
+            // -- Swagger UI v3 (OpenAPI)
+            "/v3/api-docs/**",
+            "/swagger-ui/**",
+            "/swagger-ui.html",
+            // other public endpoints of your API may be appended to this array
+    };
+
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -38,6 +55,7 @@ public class WebSecurity {
                 .exceptionHandling().authenticationEntryPoint(userAuthenticationEntryPoint)
                 .and()
                 .authorizeHttpRequests()
+                .requestMatchers(AUTH_WHITELIST).permitAll()
                 .requestMatchers(HttpMethod.POST,"/api/v1/signIn", "/api/v1/signUp").permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/v1/products/**").permitAll()
                 .requestMatchers(HttpMethod.POST, "/api/v1/products").hasAnyRole("ADMIN", "MANAGER")

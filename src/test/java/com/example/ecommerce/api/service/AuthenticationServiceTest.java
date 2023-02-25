@@ -1,12 +1,14 @@
 package com.example.ecommerce.api.service;
 
 import com.example.ecommerce.api.config.JwtService;
-import com.example.ecommerce.api.dto.user.AuthenticationRequestDto;
-import com.example.ecommerce.api.dto.user.RegistrationRequestDto;
+import com.example.ecommerce.api.entity.UserRole;
+import com.example.ecommerce.api.mapstruct.dto.user.AuthenticationRequestDto;
+import com.example.ecommerce.api.mapstruct.dto.user.RegistrationRequestDto;
 import com.example.ecommerce.api.entity.User;
 import com.example.ecommerce.api.exception.ConflictException;
 import com.example.ecommerce.api.exception.ExceptionMessages;
 import com.example.ecommerce.api.exception.InvalidCredentialsException;
+import com.example.ecommerce.api.mapstruct.mappers.UserMapper;
 import com.example.ecommerce.api.repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -35,6 +37,8 @@ class AuthenticationServiceTest {
     PasswordEncoder passwordEncoder;
     @Mock
     JwtService jwtService;
+    @Mock
+    UserMapper userMapper;
     @InjectMocks
     private AuthenticationService cut;
     ArgumentCaptor<User> userCaptor = ArgumentCaptor.forClass(User.class);
@@ -46,8 +50,17 @@ class AuthenticationServiceTest {
     void shouldRegisterUserWhenEmailIsUnique() {
         // Given
         RegistrationRequestDto request = getRegistrationRequest();
+        User user = User.builder()
+                .firstName(request.getFirstName())
+                .lastName(request.getLastName())
+                .email(request.getEmail())
+                .password(request.getPassword())
+                .role(UserRole.USER)
+                .build();
+
 
         given(userRepository.findByEmail(request.getEmail())).willReturn(Optional.empty());
+        given(userMapper.mapRegistrationRequestDtoToUser(request)).willReturn(user);
 
         // When
         cut.register(request);

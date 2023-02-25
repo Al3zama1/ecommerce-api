@@ -1,7 +1,7 @@
 package com.example.ecommerce.api.service.interfaces;
 
-import com.example.ecommerce.api.dto.order.OrderDto;
-import com.example.ecommerce.api.dto.order.OrderItemDto;
+import com.example.ecommerce.api.mapstruct.dto.order.OrderDto;
+import com.example.ecommerce.api.mapstruct.dto.order.OrderItemDto;
 import com.example.ecommerce.api.entity.User;
 
 import java.util.List;

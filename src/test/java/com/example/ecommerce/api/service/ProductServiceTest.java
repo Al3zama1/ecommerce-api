@@ -1,27 +1,28 @@
 package com.example.ecommerce.api.service;
 
-import com.example.ecommerce.api.dto.product.AddProductDto;
-import com.example.ecommerce.api.dto.product.ProductResponseDto;
-import com.example.ecommerce.api.dto.product.UpdateProductDto;
+import com.example.ecommerce.api.mapstruct.dto.product.AddProductDto;
+import com.example.ecommerce.api.mapstruct.dto.product.ProductResponseDto;
+import com.example.ecommerce.api.mapstruct.dto.product.UpdateProductDto;
 import com.example.ecommerce.api.entity.Product;
 import com.example.ecommerce.api.exception.ExceptionMessages;
 import com.example.ecommerce.api.exception.ProductNotFoundException;
+import com.example.ecommerce.api.mapstruct.mappers.ProductMapper;
 import com.example.ecommerce.api.repository.ProductRepository;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
-import org.mockito.Captor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.boot.test.mock.mockito.MockBean;
+import uk.co.jemos.podam.api.PodamFactory;
+import uk.co.jemos.podam.api.PodamFactoryImpl;
 
 import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Java6Assertions.assertThatThrownBy;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
@@ -35,23 +36,25 @@ class ProductServiceTest {
     private ProductMapper productMapper;
     @InjectMocks
     private ProductService cut;
-    ArgumentCaptor<Product> productArgumentCaptor = ArgumentCaptor.forClass(Product.class);
+    private static ArgumentCaptor<Product> productArgumentCaptor;
+    private static PodamFactory podamFactory;
+
+    @BeforeAll
+    static void setUp() {
+        productArgumentCaptor = ArgumentCaptor.forClass(Product.class);
+        podamFactory = new PodamFactoryImpl();
+    }
 
     // tests to create product
     @Test
     void shouldCreateProduct() {
         // Given
-        AddProductDto addProductDto = AddProductDto.builder()
-                .name("Iphone 11")
-                .description("This is the next generation iphone")
-                .stockQuantity(11)
-                .imageUrl("this is the image url")
-                .price(1100)
-                .build();
+        AddProductDto addProductDto = podamFactory.manufacturePojo(AddProductDto.class);
+
         Product product = Product.builder()
                 .build();
 
-        given(productMapper.mapDtoToProduct(addProductDto)).willReturn(product);
+        given(productMapper.addProductDtoToProduct(addProductDto)).willReturn(product);
         given(productRepository.save(product)).willAnswer(invocation -> {
             Product productToSave = invocation.getArgument(0);
             productToSave.setId(1L);
@@ -71,7 +74,8 @@ class ProductServiceTest {
     @Test
     void shouldReturnLisOfProducts() {
         // Given
-        given(productRepository.findAll()).willReturn(List.of());
+        Product product = podamFactory.manufacturePojo(Product.class);
+        given(productRepository.findAll()).willReturn(List.of(product));
 
         // When
         cut.getProducts();
@@ -85,9 +89,8 @@ class ProductServiceTest {
     void shouldReturnProductByIdWhenProductExists() {
         // Given
         long productId = 1L;
-        Product product = Product.builder()
-                .id(productId)
-                .build();
+        Product product = podamFactory.manufacturePojo(Product.class);
+        product.setId(productId);
 
         given(productRepository.findById(productId)).willReturn(Optional.of(product));
 
@@ -118,15 +121,12 @@ class ProductServiceTest {
     @Test
     void shouldUpdateProductWhenItExists() {
         // Given
-        UpdateProductDto updateProductDto = UpdateProductDto.builder()
-                .id(1L)
-                .name("Iphone 11")
-                .description("The next generation iphone is here")
-                .imageUrl("this is the image url")
-                .price(1100)
-                .stockQuantity(23)
-                .build();
         long productId = 1L;
+        UpdateProductDto updateProductDto = podamFactory.manufacturePojo(UpdateProductDto.class);
+        updateProductDto.setId(productId);
+
+
+
         Product product = Product.builder().build();
 
         given(productRepository.findById(productId)).willReturn(Optional.of(product));
@@ -163,9 +163,8 @@ class ProductServiceTest {
     void shouldRemoveProductWhenItExists() {
         // Given
         long productId = 1L;
-        Product product = Product.builder()
-                        .id(productId)
-                        .build();
+        Product product = podamFactory.manufacturePojo(Product.class);
+        product.setId(productId);
 
         given(productRepository.findById(productId)).willReturn(Optional.of(product));
 
@@ -190,16 +189,6 @@ class ProductServiceTest {
 
         //Then
         then(productRepository).should(never()).deleteById(any());
-    }
-
-    private ProductResponseDto getProductResponseDto(long productId) {
-       return ProductResponseDto.builder()
-               .id(productId)
-               .name("Iphone11")
-               .description("This is the next generation iphone")
-               .price(1100)
-               .imageUrl("this is the image url")
-               .build();
     }
 
 }

@@ -21,10 +21,14 @@ spring:
   devtools:
     livereload:
       enabled: true
-
 server:
   error:
     include-exception: false
     include-stacktrace: on_param
     include-message: always
     include-binding-errors: always
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html

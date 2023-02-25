@@ -1,4 +1,4 @@
-package com.example.ecommerce.api.dto.user;
+package com.example.ecommerce.api.mapstruct.dto.user;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

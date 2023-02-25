@@ -10,20 +10,16 @@ import java.time.LocalDateTime;
         @UniqueConstraint(columnNames = {"product_id", "order_id"})
 })
 @NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
+@AllArgsConstructor
 @ToString
 @Builder
 public class OrderItem {
 
-//    @EmbeddedId
-//    private OrderItemPK id;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "created_date", nullable = false)
-    private LocalDateTime createdDate;
     @Column(nullable = false)
     private long quantity;
     @Column(nullable = false)
@@ -34,7 +30,7 @@ public class OrderItem {
             referencedColumnName = "id"
     )
     private Product product;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(
             name = "order_id",
             referencedColumnName = "id"

@@ -15,8 +15,8 @@ public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "created_date", nullable = false)
-    private LocalDateTime createdDate;
+    @Column(name = "date_created", nullable = false)
+    private LocalDateTime dateCreated;
     @Column(nullable = false)
     private long quantity;
     @ManyToOne()

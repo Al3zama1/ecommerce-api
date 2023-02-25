@@ -1,4 +1,4 @@
-package com.example.ecommerce.api.dto.product;
+package com.example.ecommerce.api.mapstruct.dto.product;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.PositiveOrZero;

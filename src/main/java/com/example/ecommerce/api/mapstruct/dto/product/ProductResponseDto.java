@@ -1,27 +1,22 @@
-package com.example.ecommerce.api.dto.product;
+package com.example.ecommerce.api.mapstruct.dto.product;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.PositiveOrZero;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class UpdateProductDto {
+public class ProductResponseDto {
     @PositiveOrZero
-    private Long id;
+    private long id;
     @NotBlank
     private String name;
     @NotBlank
     private String description;
     @NotBlank
     private String imageUrl;
-    @PositiveOrZero
-    private long stockQuantity;
     @PositiveOrZero
     private double price;
 }

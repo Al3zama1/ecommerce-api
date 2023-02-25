@@ -1,20 +1,18 @@
-package com.example.ecommerce.api.dto.order;
+package com.example.ecommerce.api.mapstruct.dto.order;
 
+import com.example.ecommerce.api.mapstruct.dto.product.ProductResponseDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class OrderItemDto {
-    private String productName;
-    private String description;
-    private LocalDateTime dateCreated;
+    private long id;
+    private ProductResponseDto product;
     private long quantity;
-    private long orderId;
+
 }
