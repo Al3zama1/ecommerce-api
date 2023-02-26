@@ -1,16 +1,21 @@
 # Ecommerce API
+[![](https://img.shields.io/badge/Spring%20Boot%20Version-3.0.1-orange)](/pom.xml)
+[![](https://img.shields.io/badge/Java%20Version-17-orange)](/pom.xml)
+[![](https://img.shields.io/badge/Testcontainers%20Version-1.17.6-orange)](https://www.testcontainers.org/)
+[![](https://img.shields.io/badge/PostgreSQL%20Version-15.1-orange)](https://www.postgresql.org/)
+
 
 ## Intorduction
 Developed a fully tested ecommerce API where users can add items to shopping cart
 and place orders. Order history can be retrieved and inspect a specific one. The 
 API is protected with authentication and authorization forms of security.
 
-## Technologies
-* Spring Boot 3
-* Spring Security 6
-* Spring Data JPA
-* PostgreSQL
-* SpringMVC
+## Application Architecture
+* Spring Boot 3 backend with java.
+* Spring Security 6 to implement authentication and authorization.
+* Spring Data JPA to make queries against the database.
+* PostgreSQL (RDBMS) to store data in a relational database.
+* SpringMVC to map requests with the DispatcherServlet to specific controller handler methods.
 
 ## Security Architecture
 ![Security Architecture](./assets/jwt_security_diagram.png)
